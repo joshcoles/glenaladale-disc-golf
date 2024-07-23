@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import "./output.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 min-h-screen flex flex-col">
+        <header className="bg-purple-600 shadow-lg">
+          <div className="max-w-7xl mx-auto py-12 px-8 sm:px-12 lg:px-16">
+            <h1 className="text-6xl font-extrabold text-white">Landing Page</h1>
+          </div>
+        </header>
+
+        <main className="flex-grow mt-24 mx-auto max-w-7xl px-8 sm:mt-36 sm:px-12 lg:mt-48 lg:px-16 text-center">
+          <h2 className="text-6xl leading-tight font-extrabold text-green-500 sm:text-8xl">
+            Welcome to Glenaladale Disc Golf
+          </h2>
+        </main>
+
+        <footer className="bg-purple-600 border-t border-gray-300 mt-36">
+          <div className="max-w-7xl mx-auto py-12 px-8 sm:px-12 lg:px-16">
+            <p className="text-center text-2xl text-white">
+              &copy; 2024 Glenaladale Disc Golf, Inc. All rights reserved.
+            </p>
+          </div>
+        </footer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
