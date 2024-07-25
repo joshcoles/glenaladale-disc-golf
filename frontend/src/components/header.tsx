@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header: React.FC = () => {
 	const [navItems] = useState({
@@ -24,7 +24,14 @@ const Header: React.FC = () => {
 						<ul className="group-primary flex my-0 mx-auto">
 							{navItems.primary.map((item) => (
 								<li key={item.path} className="nav-link mx-3">
-									<Link to={item.path}>{item.text}</Link>
+									<NavLink
+										className={({ isActive }) =>
+											` rounded-3xl p-4 ${isActive ? 'bg-yellow-400' : ''}`
+										}
+										to={item.path}
+									>
+										{item.text}
+									</NavLink>
 								</li>
 							))}
 						</ul>

@@ -74,6 +74,9 @@ const config = {
 			fontFamily: {
 				accent: ['Allerta Stencil', 'sans-serif'],
 			},
+			gridTemplateRows: {
+				'custom-300': 'repeat(2, 300px)',
+			},
 		},
 	},
 	plugins: [],
