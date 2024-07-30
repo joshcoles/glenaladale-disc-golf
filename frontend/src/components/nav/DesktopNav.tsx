@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header: React.FC = () => {
+const DesktopNav: React.FC = () => {
 	const [navItems] = useState({
 		primary: [
 			{ text: 'Home', path: '/' },
@@ -17,16 +17,21 @@ const Header: React.FC = () => {
 
 	return (
 		<>
-			<header className="header py-5 px-0 bg-green-600">
-				<div className="nav-container flex justify-between items-center w-11/12 my-0 mx-auto">
-					<img className="h-20 w-auto" src="./glenaladale-icon.png" />
+			<header className="hidden sm:flex py-5 px-0 bg-green-primary">
+				<div className="flex justify-between items-center w-11/12 my-0 mx-auto">
+					<NavLink to="/">
+						<img
+							className="h-20 w-auto"
+							src="./glenaladale-icon.png"
+						/>
+					</NavLink>
 					<nav className="nav flex flex-grow font-accent text-white">
 						<ul className="group-primary flex my-0 mx-auto">
 							{navItems.primary.map((item) => (
 								<li key={item.path} className="nav-link mx-3">
 									<NavLink
 										className={({ isActive }) =>
-											` rounded-3xl p-4 ${isActive ? 'bg-yellow-400' : ''}`
+											`p-4 ${isActive ? `bg-yellow-400 text-brown-primary shadow-button-primary hover:bg-yellow-500` : 'hover:bg-green-700'}`
 										}
 										to={item.path}
 									>
@@ -43,4 +48,4 @@ const Header: React.FC = () => {
 	);
 };
 
-export default Header;
+export default DesktopNav;

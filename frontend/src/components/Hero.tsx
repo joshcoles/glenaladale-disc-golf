@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Landing: React.FC = () => {
+const Hero: React.FC = () => {
 	return (
 		<>
 			<main className="relative bg-[url('../landing-background.jpg')] bg-cover bg-center h-screen flex-grow mx-auto px-8 sm:px-12 lg:px-16 text-center flex items-center">
@@ -13,4 +13,4 @@ const Landing: React.FC = () => {
 	);
 };
 
-export default Landing;
+export default Hero;

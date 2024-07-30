@@ -1,12 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
+// import MobileNav from '../components/MobileNav';
+// import DesktopNav from '../components/DesktopNav';
+import NavBar from '../components/nav/NavBar';
 
 const MainLayout: React.FC = () => {
 	return (
 		<>
-			<Header />
+			<NavBar />
 			<Outlet />
 			<Footer />
 		</>

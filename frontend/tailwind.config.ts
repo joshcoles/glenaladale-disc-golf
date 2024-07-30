@@ -17,6 +17,7 @@ const config = {
 					'800': '#91481b',
 					'900': '#753c19',
 					'950': '#3f1d0b',
+					primary: '#f3c46f',
 				},
 				brown: {
 					'50': '#f7f4ef',
@@ -30,6 +31,7 @@ const config = {
 					'800': '#604033',
 					'900': '#573a31',
 					'950': '#301c18',
+					primary: '#573a31',
 				},
 				green: {
 					'50': '#eefbf4',
@@ -43,6 +45,7 @@ const config = {
 					'800': '#10553e',
 					'900': '#0e4634',
 					'950': '#07271e',
+					primary: '#168e62',
 				},
 				red: {
 					'50': '#fef2f2',
@@ -56,6 +59,7 @@ const config = {
 					'800': '#95211f',
 					'900': '#7c2220',
 					'950': '#430d0c',
+					primary: '#d83734',
 				},
 				yellow: {
 					'50': '#fdf8e9',
@@ -69,6 +73,7 @@ const config = {
 					'800': '#803d13',
 					'900': '#6d3216',
 					'950': '#401808',
+					primary: '#f2b033',
 				},
 			},
 			fontFamily: {
@@ -76,6 +81,10 @@ const config = {
 			},
 			gridTemplateRows: {
 				'custom-300': 'repeat(2, 300px)',
+			},
+			boxShadow: {
+				// Primary brown
+				'button-primary': '2px 2px 1px 0px #573a31',
 			},
 		},
 	},
