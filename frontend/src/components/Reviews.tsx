@@ -37,7 +37,7 @@ const Reviews: React.FC = () => {
 
 	return (
 		<>
-			<div className="bg-beige-200 p-5 rounded-md shadow-md grid gap-4 grid-cols-3 grid-rows-custom-300 h-screen">
+			<section className="bg-beige-200 p-5 rounded-md shadow-md grid gap-4 grid-cols-3 grid-rows-custom-300 h-screen">
 				{reviews.map((item, index) => (
 					<Review
 						key={index}
@@ -45,7 +45,7 @@ const Reviews: React.FC = () => {
 						description={item.body}
 					></Review>
 				))}
-			</div>
+			</section>
 		</>
 	);
 };

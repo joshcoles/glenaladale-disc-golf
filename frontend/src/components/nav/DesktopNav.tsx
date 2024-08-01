@@ -28,10 +28,10 @@ const DesktopNav: React.FC = () => {
 					<nav className="nav flex flex-grow font-accent text-white">
 						<ul className="group-primary flex my-0 mx-auto">
 							{navItems.primary.map((item) => (
-								<li key={item.path} className="nav-link mx-3">
+								<li key={item.path} className="mx-3">
 									<NavLink
 										className={({ isActive }) =>
-											`p-4 ${isActive ? `bg-yellow-400 text-brown-primary shadow-button-primary hover:bg-yellow-500` : 'hover:bg-green-700'}`
+											`p-4 ${isActive ? `bg-yellow-primary text-brown-primary shadow-button-primary hover:bg-yellow-500` : 'hover:bg-green-700'}`
 										}
 										to={item.path}
 									>

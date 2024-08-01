@@ -38,7 +38,7 @@ const MobileNav: React.FC = () => {
 			>
 				{navItems.primary.map((link, index) => (
 					<NavLink
-						className="nav-link bg-yellow-primary p-4 flex justify-center hover:bg-yellow-500 font-accent"
+						className="bg-yellow-primary p-4 flex justify-center hover:bg-yellow-500 font-accent"
 						key={index}
 						to={link.path}
 						onClick={() =>
