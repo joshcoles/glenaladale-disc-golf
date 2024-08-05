@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Hero from '../components/Hero';
-import Reviews from '../components/Reviews';
 import LinkTree from '../components/LinkTree';
 
 const HomePage: React.FC = () => {
@@ -10,7 +9,6 @@ const HomePage: React.FC = () => {
 			<div>
 				<Hero />
 				<LinkTree />
-				<Reviews />
 			</div>
 		</>
 	);
