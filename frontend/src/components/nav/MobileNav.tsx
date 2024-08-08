@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
+import { NavProps } from '../../types';
 
-const MobileNav: React.FC = () => {
-	const [navItems] = useState({
-		primary: [
-			{ text: 'Home', path: '/' },
-			{ text: 'About', path: '/about' },
-			{ text: 'Reviews', path: '/reviews' },
-			{ text: 'Contact', path: '/contact' },
-		],
-		secondary: [
-			{ text: 'Login', path: '/login' },
-			{ text: 'Settings', path: '/settings' },
-		],
-	});
-
+const MobileNav: React.FC<NavProps> = ({ primary }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
 	return (
@@ -36,7 +24,7 @@ const MobileNav: React.FC = () => {
 				id="mobile-menu"
 				className={`${mobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}
 			>
-				{navItems.primary.map((link, index) => (
+				{primary.map((link, index) => (
 					<NavLink
 						className="bg-yellow-primary p-4 flex justify-center hover:bg-yellow-500 font-accent"
 						key={index}

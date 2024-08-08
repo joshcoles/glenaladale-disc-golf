@@ -11,3 +11,15 @@ export interface LightBoxProps {
 	onClose: () => void;
 	content: ReactNode;
 }
+
+export interface NavItem {
+	text: string;
+	path: string;
+}
+
+export type NavItems = NavItem[];
+
+export interface NavProps {
+	primary: NavItems;
+	secondary?: NavItems;
+}

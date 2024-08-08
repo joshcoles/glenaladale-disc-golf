@@ -1,20 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { NavProps } from '../../types';
 
-const DesktopNav: React.FC = () => {
-	const [navItems] = useState({
-		primary: [
-			{ text: 'Home', path: '/' },
-			{ text: 'About', path: '/about' },
-			{ text: 'Reviews', path: '/reviews' },
-			{ text: 'Contact', path: '/contact' },
-		],
-		secondary: [
-			{ text: 'Login', path: '/login' },
-			{ text: 'Settings', path: '/settings' },
-		],
-	});
-
+const DesktopNav: React.FC<NavProps> = ({ primary }) => {
 	return (
 		<>
 			<header className="hidden sm:flex py-5 px-0 bg-green-primary">
@@ -27,7 +15,7 @@ const DesktopNav: React.FC = () => {
 					</NavLink>
 					<nav className="nav flex flex-grow font-accent text-white">
 						<ul className="group-primary flex my-0 mx-auto">
-							{navItems.primary.map((item) => (
+							{primary.map((item) => (
 								<li key={item.path} className="mx-3">
 									<NavLink
 										className={({ isActive }) =>
