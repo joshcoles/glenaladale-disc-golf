@@ -13,7 +13,7 @@ const DesktopNav: React.FC<NavProps> = ({ primary }) => {
 							src="./glenaladale-icon.png"
 						/>
 					</NavLink>
-					<nav className="nav flex flex-grow font-accent text-white">
+					<nav className="nav flex flex-grow font-headline text-white">
 						<ul className="group-primary flex my-0 mx-auto">
 							{primary.map((item) => (
 								<li key={item.path} className="mx-3">

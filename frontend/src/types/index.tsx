@@ -23,3 +23,8 @@ export interface NavProps {
 	primary: NavItems;
 	secondary?: NavItems;
 }
+
+export interface FooterSectionProps {
+	heading: string;
+	children: ReactNode;
+}

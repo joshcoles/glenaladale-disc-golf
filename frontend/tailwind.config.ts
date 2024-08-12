@@ -77,7 +77,9 @@ const config = {
 				},
 			},
 			fontFamily: {
-				accent: ['Allerta Stencil', 'sans-serif'],
+				headline: ['Allerta Stencil', 'sans-serif'],
+				subheadline: ['Oswald', 'sans-serif'],
+				sans: ['Droid Serif', 'system-ui', 'sans-serif'],
 			},
 			gridTemplateRows: {
 				'custom-300': 'repeat(2, 300px)',
