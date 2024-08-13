@@ -1,14 +1,37 @@
 [
 	{
-		"title": "\"A Hidden Gem in the Woods\"",
-		"description": "This course is a delightful surprise tucked away in the forest. The layout is challenging but fair, with a great mix of open fields and wooded areas. The natural beauty of the surroundings makes it a joy to play, even for beginners."
+		"user": "bill",
+		"coursesPlayed": 695,
+		"date": "2023-09-07T03:00:00.000Z",
+		"stars": 5,
+		"description": "Fantastic course! A variety of shots, very challenging. Work is still in progress, so I expect it to be better and better. Reminiscent of a John Houck design."
 	},
 	{
-		"title": "\"Perfect for All Skill Levels\"",
-		"description": "As an avid disc golfer, I appreciate a course that caters to all skill levels, and this one does just that. The holes are well-designed, providing enough variety to keep things interesting. It's clear that a lot of thought went into the layout."
+		"user": "robreddin",
+		"coursesPlayed": 22,
+		"date": "2024-07-28T03:00:00.000Z",
+		"stars": 5,
+		"description": "A great hike, first of all, and the course is taking shape as a top-notch option on PEI. Very tough to beat this beauty of a course… a nature-loving disc golfer’s dream."
 	},
 	{
-		"title": "\"Beautiful and Well-Maintained\"",
-		"description": "This disc golf course is impeccably maintained, with clean fairways and clearly marked tees. The scenery is stunning, with plenty of shade and picturesque views. It's a great place to spend a relaxing afternoon with friends or family."
+		"user": "schlegelette",
+		"coursesPlayed": 60,
+		"date": "2023-08-13T03:00:00.000Z",
+		"stars": 5,
+		"description": "It’s a very well designed course. I cannot wait to see what it develops into when the fairways grow in and the footing allows for run ups. My feet are small and I was worried about rolling ankles so did standstill throwing after the tee. Beautiful course. I find it hard to believe that it only opened in 2022!"
+	},
+	{
+		"user": "shooterdiscgolf",
+		"coursesPlayed": 35,
+		"date": "2024-08-05T03:00:00.000Z",
+		"stars": 5,
+		"description": "Best on the island. Top drawer."
+	},
+	{
+		"user": "macdaddy61",
+		"coursesPlayed": 18,
+		"date": "2024-07-28T03:00:00.000Z",
+		"stars": 4.5,
+		"description": "PEI's newest gem! Great layout with some fun lines. I loved it and can't wait to go back soon! Now even better with both red and blue tee locations! 👍"
 	}
 ]

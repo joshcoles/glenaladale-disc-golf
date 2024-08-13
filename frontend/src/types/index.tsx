@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 export interface Link {
 	text: string;
 	url: string;
@@ -28,3 +29,20 @@ export interface FooterSectionProps {
 	heading: string;
 	children: ReactNode;
 }
+
+export interface Review {
+	user: string;
+	coursesPlayed: number;
+	date: string;
+	stars: number;
+	description: string;
+}
+
+export type ReviewProps = Review;
+
+export interface StarRating {
+	stars: number;
+	maxStars?: number;
+}
+
+export type StarRatingProps = StarRating;
