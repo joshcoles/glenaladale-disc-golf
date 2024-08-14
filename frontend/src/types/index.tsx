@@ -33,7 +33,6 @@ export interface FooterSectionProps {
 export interface Review {
 	user: string;
 	coursesPlayed: number;
-	date: string;
 	stars: number;
 	description: string;
 }
@@ -45,4 +44,6 @@ export interface StarRating {
 	maxStars?: number;
 }
 
-export type StarRatingProps = StarRating;
+export type StarRatingProps = StarRating & {
+	className: string;
+};

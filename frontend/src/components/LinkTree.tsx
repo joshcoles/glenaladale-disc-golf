@@ -24,9 +24,7 @@ const LinkTree: React.FC = () => {
 	}
 
 	return (
-		<section
-			className={`bg-green-primary p-5 flex items-center justify-center flex-wrap`}
-		>
+		<section className="bg-green-primary p-5 flex items-center justify-center flex-wrap">
 			{linkItems.map((linkItem, index) => {
 				return (
 					<a

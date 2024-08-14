@@ -25,6 +25,12 @@ const config = {
 			{ singleQuote: true, useTabs: true, tabWidth: 4 },
 		],
 		indent: ['error', 'tab', { SwitchCase: 1 }],
+		'no-unused-vars': [
+			'warn',
+			{
+				args: 'none',
+			},
+		],
 	},
 };
 
