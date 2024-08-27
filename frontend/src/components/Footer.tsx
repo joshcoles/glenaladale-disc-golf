@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 		<>
 			<footer className="flex flex-col text-center">
 				<div className="bg-brown-primary w-full flex justify-center">
-					<div className="py-4 px-4 sm:px-12 lg:px-16 text-beige-primary sm:flex sm:justify-around w-full max-w-[800px]">
+					<div className="py-4 px-4 sm:px-12 lg:px-16 text-beige-primary sm:flex sm:justify-around w-full max-w-screen-md">
 						<ContentSection heading="Contact Us">
 							<span id="email">info@glenaladalediscgolf.com</span>
 							<span id="phone">(902) 330-7666</span>

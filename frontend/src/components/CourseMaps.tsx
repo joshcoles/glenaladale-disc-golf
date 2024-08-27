@@ -3,7 +3,9 @@ import { storage, ref, getDownloadURL } from '../helpers/firebase';
 import LightBox from '../components/LightBox';
 
 const CourseMaps: React.FC = () => {
-	const [courseMapUrls, setCourseMapUrls] = useState<string[]>([]);
+	const [courseMapUrls, setCourseMapUrls] = useState<(string | null)[]>(
+		Array(18).fill(null),
+	);
 	const [isLightboxOpen, setLightboxOpen] = useState(false);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [largeImageUrl, setLargeImageUrl] = useState<string | undefined>(
@@ -14,17 +16,16 @@ const CourseMaps: React.FC = () => {
 	useEffect(() => {
 		const fetchMapUrl = async () => {
 			try {
-				const urls = [];
+				const urls = [...courseMapUrls];
 				for (let i = 1; i <= 18; i++) {
 					const mapRef = ref(
 						storage,
 						`course-maps/hole-${i}-thumbnail.webp`,
 					);
 					const url = await getDownloadURL(mapRef);
-					urls.push(url);
+					urls[i - 1] = url;
+					setCourseMapUrls([...urls]);
 				}
-
-				setCourseMapUrls(urls);
 			} catch (err) {
 				console.error(err);
 			} finally {
@@ -68,7 +69,7 @@ const CourseMaps: React.FC = () => {
 					)
 				}
 			/>
-			<ul className="flex flex-wrap">
+			<ul className="grid gap-1 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
 				{courseMapUrls.map((url, index) => (
 					<li
 						onClick={() => {
@@ -78,7 +79,16 @@ const CourseMaps: React.FC = () => {
 						className="bg-green-primary p-2 m-2 cursor-pointer"
 						key={index}
 					>
-						<img className="h-60 min-h-60" src={url} />
+						{url ? (
+							<img
+								className="sm:h-50 sm:min-h-50 md:h-60 md:min-h-60"
+								src={url}
+							/>
+						) : (
+							<div className="h-60 min-h-60 flex items-center justify-center">
+								<div className="spinner"></div>
+							</div>
+						)}
 					</li>
 				))}
 			</ul>
