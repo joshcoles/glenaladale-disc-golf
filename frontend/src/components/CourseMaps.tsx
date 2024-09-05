@@ -7,7 +7,6 @@ const CourseMaps: React.FC = () => {
 		Array(18).fill(null),
 	);
 	const [isLightboxOpen, setLightboxOpen] = useState(false);
-	const [loading, setLoading] = useState<boolean>(true);
 	const [largeImageUrl, setLargeImageUrl] = useState<string | undefined>(
 		undefined,
 	);
@@ -28,8 +27,6 @@ const CourseMaps: React.FC = () => {
 				}
 			} catch (err) {
 				console.error(err);
-			} finally {
-				setLoading(false);
 			}
 		};
 
@@ -50,12 +47,8 @@ const CourseMaps: React.FC = () => {
 		}
 	};
 
-	if (loading) {
-		return <div>Loading...</div>;
-	}
-
 	return (
-		<div>
+		<div className="mb-5">
 			<LightBox
 				isOpen={isLightboxOpen}
 				onClose={() => setLightboxOpen((prev) => !prev)}
@@ -76,7 +69,7 @@ const CourseMaps: React.FC = () => {
 							setLightboxOpen(true);
 							fetchLargeImage(index);
 						}}
-						className="bg-green-primary p-2 m-2 cursor-pointer"
+						className="bg-green-primary p-2 m-2 cursor-pointer min-h-50 min-w-48"
 						key={index}
 					>
 						{url ? (

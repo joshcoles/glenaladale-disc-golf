@@ -11,75 +11,140 @@ const AboutPage: React.FC = () => {
 			case 'about':
 				return (
 					<section className="max-w-screen-xl mx-auto p-4 md:p-8">
-						{/* Primary Image */}
+						<h2>About Us</h2>
 						<div className="flex justify-center mb-8">
 							<img
-								src="https://via.placeholder.com/600x400"
+								src="/overhead.jpg"
 								alt="Primary"
 								className="w-full h-auto max-h-96 object-cover rounded-lg"
 							/>
 						</div>
+						<div className="mb-4">
+							<p className="text-brown-950 mb-4">
+								Glenaladale Disc Golf Course opened in 2022 on
+								land belonging to the Glenaladale Heritage
+								Trust. It was designed and built by course
+								owners / operators Josh Coles, Andrew Clark and
+								Patrick Callbeck.
+							</p>
 
-						{/* Content Sections */}
+							<p className="text-brown-950">
+								At approximately 7,000ft long from the red
+								layout and 8,000ft from the blue layout, the
+								course is a challenging mix of woods and open
+								disc golf.
+							</p>
+						</div>
+
 						<div className="space-y-8">
-							{/* Section 1 */}
-							<div className="flex sm:flex-col md:flex-row md:items-center md:space-x-8">
+							<div className="flex flex-col md:!flex-row md:items-center md:space-x-8">
 								<div className="md:w-1/2">
 									<h2 className="text-xl font-semibold mb-4">
-										Section 1 Title
+										The Team
 									</h2>
-									<p className="text-gray-700">
-										Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit. Integer nec odio.
-										Praesent libero. Sed cursus ante dapibus
-										diam.
+									<p className="text-brown-950">
+										The course is operated the three primary
+										owners with help from volunteers,
+										friends and family. The land on which
+										the course lies belongs to the
+										Glenaladale Heritage Trust, and is
+										leased to the course owners.
 									</p>
 								</div>
 								<div className="mt-4 md:mt-0 md:w-1/2">
 									<img
-										src="https://via.placeholder.com/600x400"
+										src="team.jpg"
 										alt="Section 1"
 										className="w-full h-auto rounded-lg object-cover"
 									/>
+									<figcaption className="text-brown-950">
+										Clockwise from top left: Patrick
+										Callbeck, Andrew Clark, Alexis Bulman,
+										Josh Coles. Alexis created much of the
+										initial signage of the course and
+										contributes to maintenance and
+										beutification on a regular basis.
+									</figcaption>
 								</div>
 							</div>
 
-							{/* Section 2 */}
-							<div className="flex sm:flex-col md:flex-row-reverse md:items-center md:space-x-8 md:space-x-reverse">
+							<div className="flex flex-col md:!flex-row-reverse md:items-center md:space-x-8 md:space-x-reverse">
 								<div className="md:w-1/2">
 									<h2 className="text-xl font-semibold mb-4">
-										Section 2 Title
+										The Land
 									</h2>
-									<p className="text-gray-700">
-										Sed nisi. Nulla quis sem at nibh
-										elementum imperdiet. Duis sagittis
-										ipsum. Praesent mauris.
+									<p className="text-brown-950">
+										The course takes up approximately 30
+										acres of the over 500 that belongs to
+										the Glenaladale Heritage Trust, and is
+										across the road from the historic
+										Glenaladale Estate. Before that it was
+										home to Mi’kmaq, followed by the
+										Acadians, the 1772 Glenaladale Scots,
+										and later the Mackinnnon family. For
+										more information, please visit the
+										<a
+											className="p-1 text-brown-950 underline"
+											href="https://glenaladalepei.com/past/"
+											target="_blank"
+										>
+											Glenaladale Website
+										</a>
+										.
 									</p>
 								</div>
 								<div className="mt-4 md:mt-0 md:w-1/2">
 									<img
-										src="https://via.placeholder.com/600x400"
+										src="overhead-2.jpg"
 										alt="Section 2"
 										className="w-full h-auto rounded-lg object-cover"
 									/>
 								</div>
 							</div>
 
-							{/* Section 3 */}
-							<div className="flex sm:flex-col md:flex-row md:items-center md:space-x-8">
+							<div className="flex flex-col md:!flex-row md:items-center md:space-x-8">
 								<div className="md:w-1/2">
 									<h2 className="text-xl font-semibold mb-4">
-										Section 3 Title
+										The Course's Origins
 									</h2>
-									<p className="text-gray-700">
-										Fusce nec tellus sed augue semper porta.
-										Mauris massa. Vestibulum lacinia arcu
-										eget nulla.
+									<p className="text-brown-950 mb-4">
+										The idea for the course began in 2020
+										when Patrick moved home from Montreal
+										and began working with the Glenaladale
+										Heritage Trust to restore the historic
+										Schoolhouse, which now sits prominently
+										at the entrance to the estate.
+									</p>
+
+									<p className="text-brown-950 mb-4">
+										At the time, the heritage trust was
+										looking for ways to extend the reach of
+										the estate into the community, in
+										particular to a younger demographic than
+										what the estate was typically frequented
+										by. Having recently been re-introduced
+										to disc golf by Josh, Patrick pitched
+										the idea of installing a course on the
+										property and brought Josh into the
+										conversation. Josh suggested including
+										Andrew, mutual friend who had previously
+										expressed interest in building a course
+										elsewhere on PEI.
+									</p>
+
+									<p className="text-brown-950 mb-4">
+										The initial course build was financed
+										largely by an ACOA grant, which the
+										heritage trust helped the disc golf team
+										acquire. Since then the course has been
+										financed by course revenue, which has
+										then been reinvested into the course
+										each year.
 									</p>
 								</div>
 								<div className="mt-4 md:mt-0 md:w-1/2">
 									<img
-										src="https://via.placeholder.com/600x400"
+										src="build.jpg"
 										alt="Section 3"
 										className="w-full h-auto rounded-lg object-cover"
 									/>
@@ -112,7 +177,6 @@ const AboutPage: React.FC = () => {
 								alt="Course Photo 3"
 								className="w-full h-auto rounded-lg object-cover"
 							/>
-							{/* Add more photos as needed */}
 						</div>
 					</section>
 				);
@@ -123,7 +187,6 @@ const AboutPage: React.FC = () => {
 
 	return (
 		<section className="bg-yellow-primary px-5 flex flex-col flex-grow items-center">
-			<h2>About Us</h2>
 			<div className="max-w-screen-xl flex flex-col items-center">
 				<div className=" flex justify-center my-4">
 					{['about', 'courseMaps', 'coursePhotos'].map((section) => (

@@ -12,12 +12,12 @@ const LightBox: React.FC<LightBoxProps> = ({ isOpen, onClose, content }) => {
 			onClick={onClose}
 		>
 			<div
-				className="content bg-white p-5 rounded-xl relative h-[80vh] top-1/2 -translate-y-1/2 w-1/2"
+				className="content p-5 rounded-xl relative h-[80vh] top-1/2 -translate-y-1/2 w-1/2"
 				onClick={(e) => e.stopPropagation()}
 			>
 				{content}
 				<button
-					className="absolute top-3 right-3 bg-none border-none text-2xl cursor-pointer"
+					className="absolute top-5 right-5 bg-none border-none text-2xl bold cursor-pointer"
 					onClick={onClose}
 				>
 					×
