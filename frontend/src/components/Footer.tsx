@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { FaCopyright } from 'react-icons/fa';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { FooterSectionProps } from '../types';
@@ -33,10 +33,17 @@ const Footer: React.FC = () => {
 						</ContentSection>
 						<ContentSection heading="Socials">
 							<div className="flex justify-center">
-								<a className="mr-1" href="">
+								<a
+									className="mr-1"
+									target="_blank"
+									href="https://www.facebook.com/glenaladalediscgolf"
+								>
 									<FaFacebook />
 								</a>
-								<a href="">
+								<a
+									target="_blank"
+									href="https://instagram.com/glenaladalediscgolf"
+								>
 									<FaInstagram />
 								</a>
 							</div>
