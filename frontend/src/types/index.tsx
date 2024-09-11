@@ -10,6 +10,7 @@ export type Links = Link[];
 export interface LightBoxProps {
 	isOpen: boolean;
 	onClose: () => void;
+	onNavigate: (e: MouseEvent) => void;
 	content: ReactNode;
 }
 
@@ -47,3 +48,5 @@ export interface StarRating {
 export type StarRatingProps = StarRating & {
 	className: string;
 };
+
+export type AboutPageSections = 'about' | 'courseMaps' | 'coursePhotos';

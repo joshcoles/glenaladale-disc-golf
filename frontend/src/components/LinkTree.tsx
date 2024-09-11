@@ -29,7 +29,7 @@ const LinkTree: React.FC = () => {
 				return (
 					<a
 						key={index}
-						className={`bg-yellow-primary text-brown-primary shadow-button-primary p-4 my-1 mr-2 hover:bg-yellow-500`}
+						className={`bg-yellow-primary text-brown-primary shadow-button-primary p-4 my-1 mr-2 hover:bg-yellow-500 font-headline`}
 						href={linkItem.url}
 					>
 						{linkItem.text}

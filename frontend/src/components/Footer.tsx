@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaCopyright } from 'react-icons/fa';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaCopyright } from 'react-icons/fa';
 import { FooterSectionProps } from '../types';
 
 const ContentSection: React.FC<FooterSectionProps> = ({
