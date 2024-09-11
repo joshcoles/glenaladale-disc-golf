@@ -10,7 +10,7 @@ export type Links = Link[];
 export interface LightBoxProps {
 	isOpen: boolean;
 	onClose: () => void;
-	onNavigate: (e: MouseEvent) => void;
+	onNavigate: (direction: string) => void;
 	content: ReactNode;
 }
 

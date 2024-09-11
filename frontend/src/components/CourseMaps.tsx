@@ -8,7 +8,7 @@ const CourseMaps: React.FC = () => {
 	);
 	const [largeImageUrls, setLargeImageUrls] = useState<
 		(string | undefined)[]
-	>(Array(18).fill(undefined)); // Store URLs of preloaded large images
+	>(Array(18).fill(undefined));
 	const [isLightboxOpen, setLightboxOpen] = useState(false);
 	const [largeImageUrl, setLargeImageUrl] = useState<string | undefined>(
 		undefined,
@@ -37,7 +37,7 @@ const CourseMaps: React.FC = () => {
 		};
 
 		fetchMapUrl();
-	}, []); // Fetch map URLs only once on mount
+	}, []);
 
 	const fetchLargeImage = useCallback(
 		async (index: number) => {
@@ -45,10 +45,9 @@ const CourseMaps: React.FC = () => {
 				setLargeImageLoading(true);
 
 				if (largeImageUrls[index]) {
-					// If already loaded, use the cached URL
 					setLargeImageUrl(largeImageUrls[index]);
 					setCurrentLargeImageIndex(index);
-					prefetchAdjacentImages(index); // Prefetch adjacent images
+					prefetchAdjacentImages(index);
 					return;
 				}
 
@@ -66,14 +65,14 @@ const CourseMaps: React.FC = () => {
 
 				setLargeImageUrl(url);
 				setCurrentLargeImageIndex(index);
-				prefetchAdjacentImages(index); // Prefetch adjacent images
+				prefetchAdjacentImages(index);
 			} catch (err) {
 				console.error(err);
 			} finally {
 				setLargeImageLoading(false);
 			}
 		},
-		[largeImageUrls], // Recalculate only when largeImageUrls change
+		[largeImageUrls],
 	);
 
 	const prefetchAdjacentImages = useCallback(
@@ -84,7 +83,6 @@ const CourseMaps: React.FC = () => {
 
 			adjacentIndices.forEach(async (i) => {
 				if (!largeImageUrls[i]) {
-					// Only fetch if not already loaded
 					const mapRef = ref(
 						storage,
 						`course-maps/hole-${i + 1}.webp`,
@@ -106,20 +104,27 @@ const CourseMaps: React.FC = () => {
 	);
 
 	const handleLightboxNavigation = useCallback(
-		(e: React.MouseEvent) => {
+		(direction: string) => {
 			if (currentLargeImageIndex === undefined) {
 				return;
 			}
 
-			const direction = e.currentTarget.getAttribute('data-direction');
-			const newIndex =
-				direction === 'back'
-					? currentLargeImageIndex - 1
-					: currentLargeImageIndex + 1;
+			let newIndex;
 
-			if (newIndex >= 0 && newIndex < courseMapUrls.length) {
-				fetchLargeImage(newIndex);
+			if (direction === 'back') {
+				newIndex =
+					currentLargeImageIndex === 0
+						? courseMapUrls.length - 1
+						: currentLargeImageIndex - 1;
+			} else if (direction === 'forward') {
+				newIndex =
+					currentLargeImageIndex === courseMapUrls.length - 1
+						? 0
+						: currentLargeImageIndex + 1;
+			} else {
+				return;
 			}
+			fetchLargeImage(newIndex);
 		},
 		[currentLargeImageIndex, fetchLargeImage, courseMapUrls.length],
 	);
