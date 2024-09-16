@@ -7,7 +7,7 @@ import Reviews from '../components/Reviews';
 const HomePage: React.FC = () => {
 	return (
 		<>
-			<div>
+			<div className="flex flex-col h-screen">
 				<Hero />
 				<LinkTree />
 				<Reviews />

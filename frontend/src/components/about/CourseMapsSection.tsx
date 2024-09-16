@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { storage, ref, getDownloadURL } from '../helpers/firebase';
-import LightBox from '../components/LightBox';
+import { storage, ref, getDownloadURL } from '../../helpers/firebase';
+import LightBox from '../../components/LightBox';
 
-const CourseMaps: React.FC = () => {
+const CourseMapsSection: React.FC = () => {
 	const [courseMapUrls, setCourseMapUrls] = useState<(string | null)[]>(
 		Array(18).fill(null),
 	);
@@ -159,7 +159,7 @@ const CourseMaps: React.FC = () => {
 							setLightboxOpen(true);
 							fetchLargeImage(index);
 						}}
-						className="bg-green-primary p-2 m-2 cursor-pointer min-h-50 min-w-48"
+						className="bg-green-primary p-2 m-2 cursor-pointer min-h-50 min-w-48 flex justify-center"
 						key={index}
 					>
 						{url ? (
@@ -180,4 +180,4 @@ const CourseMaps: React.FC = () => {
 	);
 };
 
-export default CourseMaps;
+export default CourseMapsSection;

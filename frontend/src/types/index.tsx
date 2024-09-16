@@ -49,4 +49,4 @@ export type StarRatingProps = StarRating & {
 	className: string;
 };
 
-export type AboutPageSections = 'about' | 'courseMaps' | 'coursePhotos';
+export type AboutPageSections = 'about' | 'courseMaps' | 'faq';
