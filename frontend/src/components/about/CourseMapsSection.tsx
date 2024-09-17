@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { storage, ref, getDownloadURL } from '../../helpers/firebase';
-import LightBox from '../../components/LightBox';
+import LightBox from '../../components/util/LightBox';
+import LoadingSpinner from '../util/LoadingSpinner';
 
 const CourseMapsSection: React.FC = () => {
 	const [courseMapUrls, setCourseMapUrls] = useState<(string | null)[]>(
@@ -18,24 +19,24 @@ const CourseMapsSection: React.FC = () => {
 	>(undefined);
 	const [largeImageLoading, setLargeImageLoading] = useState<boolean>(false);
 
-	useEffect(() => {
-		const fetchMapUrl = async () => {
-			try {
-				const urls = [...courseMapUrls];
-				for (let i = 1; i <= 18; i++) {
-					const mapRef = ref(
-						storage,
-						`course-maps/hole-${i}-thumbnail.webp`,
-					);
-					const url = await getDownloadURL(mapRef);
-					urls[i - 1] = url;
-					setCourseMapUrls([...urls]);
-				}
-			} catch (err) {
-				console.error(err);
+	const fetchMapUrl = async () => {
+		try {
+			const urls = [...courseMapUrls];
+			for (let i = 1; i <= 18; i++) {
+				const mapRef = ref(
+					storage,
+					`course-maps/hole-${i}-thumbnail.webp`,
+				);
+				const url = await getDownloadURL(mapRef);
+				urls[i - 1] = url;
+				setCourseMapUrls([...urls]);
 			}
-		};
+		} catch (err) {
+			console.error(err);
+		}
+	};
 
+	useEffect(() => {
 		fetchMapUrl();
 	}, []);
 
@@ -137,7 +138,7 @@ const CourseMapsSection: React.FC = () => {
 				onNavigate={handleLightboxNavigation}
 				content={
 					largeImageLoading ? (
-						<div>Loading large image...</div>
+						<LoadingSpinner />
 					) : (
 						largeImageUrl && (
 							<img
@@ -152,19 +153,19 @@ const CourseMapsSection: React.FC = () => {
 			<h2 className="text-brown-primary mb-5 text-center text-4xl">
 				Course Maps
 			</h2>
-			<ul className="grid gap-1 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
+			<ul className="grid gap-4 p-4 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
 				{courseMapUrls.map((url, index) => (
 					<li
 						onClick={() => {
 							setLightboxOpen(true);
 							fetchLargeImage(index);
 						}}
-						className="bg-green-primary p-2 m-2 cursor-pointer min-h-50 min-w-48 flex justify-center"
+						className="bg-green-primary flex justify-center items-center p-2 cursor-pointer "
 						key={index}
 					>
 						{url ? (
 							<img
-								className="sm:h-50 sm:min-h-50 md:h-60 md:min-h-60"
+								className="w-full h-auto"
 								src={url}
 								alt={`Course Map ${index + 1}`}
 							/>

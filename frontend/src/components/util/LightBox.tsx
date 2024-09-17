@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { LightBoxProps } from '../types/index';
+import { LightBoxProps } from '../../types/index';
 import { FaWindowClose, FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
 const LightBox: React.FC<LightBoxProps> = ({
