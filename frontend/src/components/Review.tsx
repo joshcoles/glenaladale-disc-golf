@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ReviewProps } from '../types';
-import StarRating from './StarRating';
+import StarRating from './util/StarRating';
 
 const Review: React.FC<ReviewProps> = ({
 	user,
