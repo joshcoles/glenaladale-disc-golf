@@ -87,6 +87,7 @@ const config = {
 			boxShadow: {
 				// Primary brown
 				'button-primary': '2px 2px 1px 0px #573a31',
+				'button-primary-inset': 'inset 2px 2px 1px 0px #573a31',
 			},
 		},
 	},

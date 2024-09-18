@@ -8,10 +8,10 @@ const AboutPage: React.FC = () => {
 	const [activeSection, setActiveSection] =
 		useState<AboutPageSections>('about');
 	const [activeClasses] = useState(
-		'bg-green-primary hover:bg-green-700 text-white',
+		'bg-green-primary hover:bg-green-700 text-white shadow-button-primary-inset',
 	);
 	const [inactiveClasses] = useState(
-		'bg-white hover:bg-slate-200 text-green-primary',
+		'bg-white hover:bg-slate-200 text-green-primary shadow-button-primary',
 	);
 
 	const aboutSection = () => (
@@ -47,7 +47,7 @@ const AboutPage: React.FC = () => {
 					).map((section: AboutPageSections) => (
 						<button
 							key={section}
-							className={`px-6 py-4 font-headline ${activeSection === section ? activeClasses : inactiveClasses}`}
+							className={`px-6 py-4 font-headline mx-1 ${activeSection === section ? activeClasses : inactiveClasses}`}
 							onClick={() => setActiveSection(section)}
 						>
 							{section === 'about'

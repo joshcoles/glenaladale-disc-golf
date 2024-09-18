@@ -10,11 +10,11 @@ const AboutSection: React.FC = () => {
 				<img
 					src="/overhead.jpg"
 					alt="Primary"
-					className="w-full h-auto max-h-[500px] object-cover rounded-lg"
+					className="w-full h-auto max-h-[500px] object-cover"
 				/>
 			</div>
 			<div className="mb-4">
-				<p className="mb-5">
+				<p className="mb-5 font-bold">
 					Glenaladale Disc Golf Course opened in June of 2022. It
 					operates as a separate entity from the Glenaladale Heritage
 					Trust, from which it leases the course's land. The course is
@@ -23,11 +23,12 @@ const AboutSection: React.FC = () => {
 				</p>
 				<p className="mb-5">
 					The course was designed and built by course owners /
-					operators Josh Coles, Andrew Clark and Patrick Callbeck. The
-					three friends are avid disc golfers and wanted to try their
-					hand at adding to the list of world-class destination disc
-					golf courses on PEI, and to create one with a strong
-					community.
+					operators <strong>Josh Coles</strong>,{' '}
+					<strong>Andrew Clark</strong> and{' '}
+					<strong>Patrick Callbeck</strong>. The three friends are
+					avid disc golfers and wanted to try their hand at adding to
+					the list of world-class destination disc golf courses on
+					PEI, and to create one with a strong community.
 				</p>
 				<p className="mb-5">
 					At approximately 7,000ft long from the red layout and
