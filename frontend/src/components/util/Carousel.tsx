@@ -42,25 +42,29 @@ const Carousel: React.FC<CarouselProps> = ({
 			return;
 		}
 
-		const interval = setInterval(nextSlide, 7000);
+		const interval = setInterval(nextSlide, 5000);
 
 		return () => clearInterval(interval);
 	}, [autoPlay, currentIndex]);
 
 	return (
-		<div className="relative w-full mx-auto overflow-hidden shrink-0 min-h-[500px]">
+		<div className="relative w-full h-full overflow-hidden">
 			<div
-				className="flex transition-transform duration-1000"
+				className="flex transition-transform duration-1000 h-full"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
 			>
 				{imageUrls.map((src, index) => (
-					<img
+					<div
 						key={index}
-						src={src}
-						alt={`Slide ${index + 1}`}
-						className="w-full flex-shrink-0"
-						loading="lazy"
-					/>
+						className="flex-shrink-0 w-full aspect-w-16 aspect-h-9"
+					>
+						<img
+							src={src}
+							alt={`Slide ${index + 1}`}
+							className="w-full h-full object-cover object-center"
+							loading="lazy"
+						/>
+					</div>
 				))}
 			</div>
 
