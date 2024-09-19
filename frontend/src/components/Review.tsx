@@ -7,8 +7,9 @@ const Review: React.FC<ReviewProps> = ({
 	coursesPlayed,
 	stars,
 	description,
+	initialShowFullReview = false,
 }) => {
-	const [showFullReview, setFullShowReview] = useState(false);
+	const [showFullReview, setFullShowReview] = useState(initialShowFullReview);
 
 	useEffect(() => {
 		if (description.length < 90) {
