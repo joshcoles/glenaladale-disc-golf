@@ -150,9 +150,9 @@ const CourseMapsSection: React.FC = () => {
 					)
 				}
 			/>
-			<h2 className="text-brown-primary mb-5 text-center text-4xl">
-				Course Maps
-			</h2>
+			<span className="text-brown-primary mb-5 text-center text-2xl block">
+				Click on a map to expand
+			</span>
 			<ul className="grid gap-4 p-4 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
 				{courseMapUrls.map((url, index) => (
 					<li

@@ -12,6 +12,8 @@ const Carousel: React.FC<CarouselProps> = ({
 }) => {
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
 	const [imageUrls, setImageUrls] = useState<string[]>([]);
+	const [isFirstImageLoaded, setIsFirstImageLoaded] =
+		useState<boolean>(false);
 
 	const nextSlide = () => {
 		setCurrentIndex((prevIndex) =>
@@ -26,13 +28,17 @@ const Carousel: React.FC<CarouselProps> = ({
 	};
 
 	const getImageUrls = async () => {
-		const urls = [...imageUrls];
+		const urls = [];
 		for (let i = 1; i <= 3; i++) {
 			const mapRef = ref(storage, `hero-carousel/carousel-${i}.webp`);
 			const url = await getDownloadURL(mapRef);
-			urls[i - 1] = url;
-			setImageUrls([...urls]);
+			urls.push(url);
 		}
+		setImageUrls(urls);
+	};
+
+	const handleFirstImageLoad = () => {
+		setIsFirstImageLoaded(true);
 	};
 
 	useEffect(() => {
@@ -48,7 +54,7 @@ const Carousel: React.FC<CarouselProps> = ({
 	}, [autoPlay, currentIndex]);
 
 	return (
-		<div className="relative w-full h-full overflow-hidden">
+		<div className="relative w-full h-full overflow-hidden bg-black">
 			<div
 				className="flex transition-transform duration-1000 h-full"
 				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -56,12 +62,25 @@ const Carousel: React.FC<CarouselProps> = ({
 				{imageUrls.map((src, index) => (
 					<div
 						key={index}
-						className="flex-shrink-0 w-full aspect-w-16 aspect-h-9"
+						className="flex-shrink-0 w-full aspect-w-16 aspect-h-9 relative"
 					>
+						<div
+							className={`absolute inset-0 bg-black transition-opacity duration-1000 ${
+								isFirstImageLoaded ? 'opacity-0' : 'opacity-100'
+							}`}
+						></div>
+
 						<img
 							src={src}
 							alt={`Slide ${index + 1}`}
-							className="w-full h-full object-cover object-center"
+							className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
+								isFirstImageLoaded || index !== 0
+									? 'opacity-100'
+									: 'opacity-0'
+							}`}
+							onLoad={
+								index === 0 ? handleFirstImageLoad : undefined
+							}
 							loading="lazy"
 						/>
 					</div>

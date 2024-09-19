@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
 		<>
 			<Hero />
 			<LinkTree />
-			<Reviews />
+			<Reviews numberToShow={3} showFullReviews={false} />
 			<FlyThroughVideo />
 		</>
 	);

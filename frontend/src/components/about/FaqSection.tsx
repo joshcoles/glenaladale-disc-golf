@@ -53,7 +53,6 @@ const FaqSection: React.FC = () => {
 	];
 	return (
 		<>
-			<h2 className=" mb-5 text-center text-4xl">FAQ</h2>
 			<div className="text-left">
 				{entries.map(({ question, answer }, index) => (
 					<div key={index} className="mb-5">

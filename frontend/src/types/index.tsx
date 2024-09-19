@@ -36,6 +36,7 @@ export interface Review {
 	coursesPlayed: number;
 	stars: number;
 	description: string;
+	initialShowFullReview?: boolean;
 }
 
 export type ReviewProps = Review;
