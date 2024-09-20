@@ -6,15 +6,17 @@ import { NavProps } from '../../types';
 const NavBar: React.FC = () => {
 	const [navItems] = useState<NavProps>({
 		primary: [
-			{ text: 'Home', path: '/' },
-			{ text: 'About', path: '/about' },
-			{ text: 'Reviews', path: '/reviews' },
-			{ text: 'Contact', path: '/contact' },
+			{ text: 'Home', path: '/', external: false },
+			{ text: 'About', path: '/about', external: false },
+			{ text: 'Reviews', path: '/reviews', external: false },
+			{
+				text: 'UDisc',
+				path: 'https://udisc.com/courses/glenaladale-disc-golf-course-gl5b',
+				external: true,
+			},
+			{ text: 'Contact', path: '/contact', external: false },
 		],
-		secondary: [
-			{ text: 'Login', path: '/login' },
-			{ text: 'Settings', path: '/settings' },
-		],
+		secondary: [],
 	});
 
 	return (

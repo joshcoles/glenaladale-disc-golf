@@ -91,7 +91,15 @@ const config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		({ addUtilities }) => {
+			addUtilities({
+				'.text-shadow-brown': {
+					textShadow: '5px 5px 0 #573a31',
+				},
+			});
+		},
+	],
 };
 
 export default config;

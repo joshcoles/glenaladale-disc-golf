@@ -17,6 +17,7 @@ export interface LightBoxProps {
 export interface NavItem {
 	text: string;
 	path: string;
+	external: boolean;
 }
 
 export type NavItems = NavItem[];
