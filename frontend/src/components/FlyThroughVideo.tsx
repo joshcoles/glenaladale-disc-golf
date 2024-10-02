@@ -3,7 +3,7 @@ import React from 'react';
 const FlyThroughVideo: React.FC = () => {
 	return (
 		<section className="bg-green-primary p-5 flex flex-col items-center justify-center">
-			<div className="w-full min-w-[400px] max-w-[800px]">
+			<div className="w-full md:min-w-[400px] max-w-[800px]">
 				<div className="relative w-full overflow-hidden pt-[56.25%]">
 					<iframe
 						className="absolute top-0 left-0 w-full h-full border-none"

@@ -1,9 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 
+const primaryBrown = '#573a31';
+const black = 'rgba(0, 0, 0, 1)';
+const transparent = 'rgba(0, 0, 0, 0)';
+
 const config = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
+			boxShadow: {
+				'button-primary': `2px 2px 1px 0px ${primaryBrown}`,
+				'button-primary-inset': `inset 2px 2px 1px 0px ${primaryBrown}`,
+			},
 			colors: {
 				beige: {
 					'50': '#fef9ee',
@@ -84,18 +92,16 @@ const config = {
 			gridTemplateRows: {
 				'custom-300': 'repeat(2, 300px)',
 			},
-			boxShadow: {
-				// Primary brown
-				'button-primary': '2px 2px 1px 0px #573a31',
-				'button-primary-inset': 'inset 2px 2px 1px 0px #573a31',
-			},
 		},
 	},
 	plugins: [
 		({ addUtilities }) => {
 			addUtilities({
 				'.text-shadow-brown': {
-					textShadow: '5px 5px 0 #573a31',
+					textShadow: `5px 5px 0 ${primaryBrown}`,
+				},
+				'.mask-fade-right': {
+					maskImage: `linear-gradient(to right, ${black}, ${transparent})`,
 				},
 			});
 		},

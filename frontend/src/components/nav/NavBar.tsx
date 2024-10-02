@@ -14,6 +14,11 @@ const NavBar: React.FC = () => {
 				path: 'https://udisc.com/courses/glenaladale-disc-golf-course-gl5b',
 				external: true,
 			},
+			{
+				text: 'Our Facebook Community',
+				path: 'https://www.facebook.com/groups/1189083618627541',
+				external: true,
+			},
 			{ text: 'Contact', path: '/contact', external: false },
 		],
 		secondary: [],
