@@ -9,7 +9,7 @@ const config = {
 	theme: {
 		extend: {
 			boxShadow: {
-				'button-primary': `2px 2px 1px 0px ${primaryBrown}`,
+				'button-primary': `5px 5px 0px 0px ${primaryBrown}`,
 				'button-primary-inset': `inset 2px 2px 1px 0px ${primaryBrown}`,
 			},
 			colors: {
