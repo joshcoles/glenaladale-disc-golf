@@ -3,12 +3,12 @@ import Reviews from '../components/Reviews';
 
 const ReviewsPage: React.FC = () => {
 	return (
-		<div className="bg-yellow-primary flex flex-col flex-grow items-center">
-			<div className="max-w-screen-xl w-full">
-				<h2 className="text-brown-primary mb-5 text-center text-2xl block mt-6">
+		<div className="bg-yellow-primary flex flex-col flex-grow items-center pt-5">
+			<div className="max-w-screen-xl w-full text-center">
+				<h2 className="text-3xl sm:text-3xl font-bold text-brown-primary mb-4">
 					Player reviews pulled from UDisc
 				</h2>
-				<p>
+				<p className="text-lg sm:text-xl text-brown-primary">
 					We love receiving feedback about the course and have
 					collected recent reviews from UDisc, a leading app for disc
 					golfers to discover and rate courses. While these are all

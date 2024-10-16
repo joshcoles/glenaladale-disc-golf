@@ -65,7 +65,7 @@ const Carousel: React.FC<CarouselProps> = ({
 						className="flex-shrink-0 w-full aspect-w-16 aspect-h-9 relative"
 					>
 						<div
-							className={`absolute inset-0 bg-black transition-opacity duration-1000 ${
+							className={`absolute inset-0 bg-black transition-opacity ${
 								isFirstImageLoaded ? 'opacity-0' : 'opacity-100'
 							}`}
 						></div>

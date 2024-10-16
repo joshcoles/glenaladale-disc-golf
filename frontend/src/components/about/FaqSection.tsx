@@ -53,13 +53,32 @@ const FaqSection: React.FC = () => {
 	];
 	return (
 		<>
-			<div className="text-left">
-				{entries.map(({ question, answer }, index) => (
-					<div key={index} className="mb-5">
-						<h3 className="bold text-3xl mb-1">{question}</h3>
-						<p>{answer}</p>
-					</div>
-				))}
+			<div className="max-w-screen-xl bg-green-primary p-5 text-left mx-auto">
+				{entries.map(({ question, answer }, index) => {
+					const isEven = (index + 1) % 2;
+					const backgroundColor = isEven
+						? 'bg-green-900'
+						: 'bg-yellow-primary';
+					const questionTextColor = isEven
+						? 'text-yellow-primary'
+						: 'text-brown-primary';
+					const answerTextColor = isEven
+						? 'text-beige-primary'
+						: 'text-brown-primary';
+					return (
+						<div
+							key={index}
+							className={`mb-5 p-6 shadow-md ${backgroundColor}`}
+						>
+							<h3
+								className={`font-bold text-xl ${questionTextColor} mb-2`}
+							>
+								{question}
+							</h3>
+							<p className={answerTextColor}>{answer}</p>
+						</div>
+					);
+				})}
 			</div>
 		</>
 	);

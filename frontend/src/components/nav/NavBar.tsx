@@ -8,6 +8,7 @@ const NavBar: React.FC = () => {
 		primary: [
 			{ text: 'Home', path: '/', external: false },
 			{ text: 'About', path: '/about', external: false },
+			{ text: 'FAQ', path: '/faq', external: false },
 			{ text: 'Reviews', path: '/reviews', external: false },
 			{
 				text: 'UDisc',

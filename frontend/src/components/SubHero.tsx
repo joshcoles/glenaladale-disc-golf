@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Links } from '../types';
-import LinksData from '../data/links.json';
 import {
 	FaStar,
 	FaCommentsDollar,
@@ -18,13 +16,11 @@ const iconMap: Record<IconType, JSX.Element> = {
 };
 
 const SubHero: React.FC = () => {
-	const [linkItems, setLinkItems] = useState<Links>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchPosts = () => {
 			try {
-				setLinkItems(LinksData);
 				setIsLoading(false);
 			} catch (err) {
 				console.error('Error', err);
