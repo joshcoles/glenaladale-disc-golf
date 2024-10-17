@@ -53,7 +53,7 @@ const FaqSection: React.FC = () => {
 	];
 	return (
 		<>
-			<div className="max-w-screen-xl bg-green-primary p-5 text-left mx-auto">
+			<div className="max-w-screen-xl bg-green-primary p-5 pb-0 mb-5 text-left mx-auto">
 				{entries.map(({ question, answer }, index) => {
 					const isEven = (index + 1) % 2;
 					const backgroundColor = isEven

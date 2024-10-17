@@ -7,6 +7,11 @@ import {
 } from 'react-icons/fa';
 
 type IconType = 'car' | 'membership' | 'money' | 'star';
+type Item = {
+	icon: IconType;
+	title: string | JSX.Element;
+	description: string;
+};
 
 const iconMap: Record<IconType, JSX.Element> = {
 	car: <FaCarSide />,
@@ -34,10 +39,22 @@ const SubHero: React.FC = () => {
 		return <h1>Loading</h1>;
 	}
 
-	const items = [
+	const items: Item[] = [
 		{
 			icon: 'star' as IconType,
-			title: '4.6 Rating on UDisc',
+			title: (
+				<>
+					4.6 Rating on{' '}
+					<a
+						href="https://udisc.com/courses/glenaladale-disc-golf-course-gl5b"
+						className="underline"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						UDisc
+					</a>
+				</>
+			),
 			description:
 				'UDisc users have ranked us the 3rd best course on PEI!',
 		},
@@ -63,7 +80,7 @@ const SubHero: React.FC = () => {
 	return (
 		<section className="bg-green-primary p-5 sm:!p-10 pt-0 flex flex-col items-center justify-center flex-wrap">
 			<div className="flex flex-wrap items-center justify-center">
-				<div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="max-w-screen-xl mx-auto">
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 						{items.map((item, index) => {
 							const isEven = (index + 1) % 2;
@@ -75,8 +92,12 @@ const SubHero: React.FC = () => {
 								: 'text-brown-primary';
 							return (
 								<div
-									className={`${backgroundColor} p-6 shadow-lg text-center`}
-									key={item.title}
+									className={`${backgroundColor} p-6 shadow-button-primary text-center`}
+									key={
+										typeof item.title === 'string'
+											? item.title
+											: String(item.title)
+									}
 								>
 									<div className="flex justify-center mb-4">
 										<span

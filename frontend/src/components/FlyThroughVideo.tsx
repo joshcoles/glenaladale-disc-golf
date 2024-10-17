@@ -15,16 +15,16 @@ const FlyThroughVideo: React.FC = () => {
 					</div>
 				</div>
 				<div>
-					<h2 className="text-3xl font-bold text-white mb-4">
-						Our Course Video
+					<h2 className="text-3xl font-bold text-beige-200 mb-4">
+						Explore Our Course
 					</h2>
-					<p className="text-lg text-white">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Nullam scelerisque nulla nec nisi semper, vitae varius
-						est lacinia. Pellentesque habitant morbi tristique
-						senectus et netus et malesuada fames ac turpis egestas.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Aenean ut interdum libero.
+					<p className="text-lg text-beige-primary">
+						Take a fly-through of our course as it was in the autumn
+						of 2023. At this point in time we had recently opened
+						our red and blue layouts and had spent much of the year
+						cleaning up from hurricane Fiona the year before. Don't
+						be surprised if the course looks better when you arrive,
+						as we are constantly making improvements!
 					</p>
 				</div>
 			</div>

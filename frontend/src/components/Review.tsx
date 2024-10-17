@@ -40,7 +40,7 @@ const Review: React.FC<ReviewProps> = ({
 					</div>
 					<StarRating className="sm:mt-1 lg:mt-0" stars={stars} />
 				</div>
-				<p className="font-sans italic">
+				<p className="font-sans italic text-beige-primary">
 					{showFullReview
 						? description
 						: `${description.substring(0, 90)}...`}
