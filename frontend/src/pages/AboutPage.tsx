@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CourseMapsSection from '../components/about/CourseMapsSection';
 import AboutSection from '../components/about/AboutSection';
-import FaqSection from '../components/about/FaqSection';
 import { AboutPageSections } from '../types';
 
 const AboutPage: React.FC = () => {

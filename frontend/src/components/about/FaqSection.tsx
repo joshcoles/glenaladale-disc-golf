@@ -40,7 +40,7 @@ const FaqSection: React.FC = () => {
 		},
 		{
 			question: "What do you do with the course's green fees?",
-			answer: "It's surprisingly expensive to run and maintain a large disc golf course. All of the money we get from green fees goes back into developing the course. We use it to buy things like lawnmowers, landscaping materials, baskets, turf, signage, etc. Rest assured that we are not making any money off of this project.",
+			answer: "It's expensive to run and maintain a large disc golf course. All of the money we get from green fees goes back into developing the course. We use it to buy things like lawnmowers, landscaping materials, baskets, turf, signage, etc. Rest assured that we are not making any money off of this project.",
 		},
 		{
 			question: 'Are there washrooms on available site?',

@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
+import GalleryPage from './pages/GalleryPage';
 import MainLayout from './layouts/MainLayout';
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
 			<Route index element={<HomePage />} />
 			<Route path="/about" element={<AboutPage />} />
 			<Route path="/faq" element={<FAQPage />} />
+			<Route path="/gallery" element={<GalleryPage />} />
 			<Route path="/reviews" element={<ReviewsPage />} />
 			<Route path="/contact" element={<ContactPage />} />
 		</Route>,
