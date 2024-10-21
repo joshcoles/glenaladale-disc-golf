@@ -21,7 +21,7 @@ const Review: React.FC<ReviewProps> = ({
 
 	return (
 		<>
-			<div className="bg-green-primary p-5 shadow-button-primary text-beige-200">
+			<div className="bg-yellow-primary p-5 shadow-button-primary text-brown-primary">
 				<div className="flex justify-between mb-1 sm:flex-col lg:flex-row">
 					<div className="flex">
 						<img
@@ -40,7 +40,7 @@ const Review: React.FC<ReviewProps> = ({
 					</div>
 					<StarRating className="sm:mt-1 lg:mt-0" stars={stars} />
 				</div>
-				<p className="font-sans italic text-beige-primary">
+				<p className="font-sans italic text-brown-primary">
 					{showFullReview
 						? description
 						: `${description.substring(0, 90)}...`}

@@ -2,15 +2,15 @@ import React from 'react';
 
 const AboutSection: React.FC = () => {
 	return (
-		<>
-			<div className="flex justify-center mb-8">
-				<img
-					src="/overhead.jpg"
-					alt="Primary"
-					className="w-full h-auto max-h-[500px] object-cover"
-				/>
-			</div>
-			<div className="mb-4">
+		<div className="max-w-screen-xl bg-green-primary p-6 pb-0 mb-5 text-left mx-auto text-brown-primary">
+			<div className="bg-yellow-primary shadow-button-primary p-5 mb-4">
+				<div className="flex justify-center mb-8">
+					<img
+						src="/overhead.jpg"
+						alt="Primary"
+						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
+					/>
+				</div>
 				<p className="mb-5 font-bold">
 					Glenaladale Disc Golf Course opened in June of 2022. It is a
 					separate entity from the Glenaladale Heritage Trust, from
@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
 					at adding to the list of world-class destination disc golf
 					courses on PEI, and to create one with a strong community.
 				</p>
-				<p className="mb-5">
+				<p className="">
 					At approximately 7,000ft long from the red layout and
 					8,000ft from the blue layout, the course is a challenging
 					mix of woods and open disc golf. Newer players can enjoy the
@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
 			</div>
 
 			<div>
-				<div className="flex flex-col md:!flex-row md:space-x-8 mt-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Team
@@ -96,7 +96,7 @@ const AboutSection: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col md:!flex-row-reverse md:space-x-8 md:space-x-reverse mt-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row-reverse md:space-x-8 md:space-x-reverse mt-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Land
@@ -159,7 +159,7 @@ const AboutSection: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col md:!flex-row md:space-x-8 mt-12 mb-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 mb-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Course's Origins
@@ -209,7 +209,7 @@ const AboutSection: React.FC = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

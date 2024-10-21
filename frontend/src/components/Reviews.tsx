@@ -10,8 +10,8 @@ interface ReviewsProps {
 const Reviews: React.FC<ReviewsProps> = ({ numberToShow, showFullReviews }) => {
 	return (
 		<>
-			<section className="bg-yellow-primary flex flex-col flex-grow items-center">
-				<div className="max-w-screen-xl py-14 px-5 sm:!px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+			<section className="bg-green-primary mb-5 p-6 flex flex-col flex-grow items-center">
+				<div className="max-w-screen-xl px-5 sm:!px-0 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 					{reviews.slice(0, numberToShow).map((item, index) => (
 						<Review
 							key={index}

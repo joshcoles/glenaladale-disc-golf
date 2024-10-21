@@ -131,7 +131,7 @@ const CourseMapsSection: React.FC = () => {
 	);
 
 	return (
-		<div className="mb-5">
+		<div className="max-w-screen-xl w-full bg-green-primary p-6 mb-5 text-left mx-auto text-brown-primary">
 			<LightBox
 				isOpen={isLightboxOpen}
 				onClose={() => setLightboxOpen((prev) => !prev)}
@@ -150,14 +150,14 @@ const CourseMapsSection: React.FC = () => {
 					)
 				}
 			/>
-			<ul className="grid gap-4 p-4 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
+			<ul className="grid gap-4 grid-cols-2 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
 				{courseMapUrls.map((url, index) => (
 					<li
 						onClick={() => {
 							setLightboxOpen(true);
 							fetchLargeImage(index);
 						}}
-						className="bg-green-primary flex justify-center items-center p-2 cursor-pointer "
+						className="bg-green-primary flex justify-center items-center cursor-pointer "
 						key={index}
 					>
 						{url ? (
@@ -168,7 +168,7 @@ const CourseMapsSection: React.FC = () => {
 							/>
 						) : (
 							<div className="h-60 min-h-60 flex items-center justify-center">
-								<div className="spinner"></div>
+								<LoadingSpinner />
 							</div>
 						)}
 					</li>
