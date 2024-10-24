@@ -8,7 +8,7 @@ const MobileNav: React.FC<NavProps> = ({ primary }) => {
 
 	return (
 		<>
-			<nav className="sm:hidden relative flex justify-center py-3 bg-green-600">
+			<nav className="md:!hidden relative flex justify-center py-3 bg-green-600">
 				<NavLink to="/">
 					<img className="h-10" src="./glenaladale-icon.png" />
 				</NavLink>
@@ -22,7 +22,7 @@ const MobileNav: React.FC<NavProps> = ({ primary }) => {
 			</nav>
 			<div
 				id="mobile-menu"
-				className={`${mobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}
+				className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden`}
 			>
 				{primary.map((link, index) => (
 					<NavLink

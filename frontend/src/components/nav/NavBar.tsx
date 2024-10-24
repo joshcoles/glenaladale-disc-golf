@@ -10,14 +10,13 @@ const NavBar: React.FC = () => {
 			{ text: 'About', path: '/about', external: false },
 			{ text: 'FAQ', path: '/faq', external: false },
 			{ text: 'Gallery', path: '/gallery', external: false },
-			{ text: 'Reviews', path: '/reviews', external: false },
 			{
 				text: 'UDisc',
 				path: 'https://udisc.com/courses/glenaladale-disc-golf-course-gl5b',
 				external: true,
 			},
 			{
-				text: 'Our Facebook Community',
+				text: 'FB Community',
 				path: 'https://www.facebook.com/groups/1189083618627541',
 				external: true,
 			},
