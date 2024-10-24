@@ -2,7 +2,7 @@ import React from 'react';
 
 const FlyThroughVideo: React.FC = () => {
 	return (
-		<section className="bg-green-primary py-16 px-6">
+		<section className="bg-green-900 py-16 px-6">
 			<div className="max-w-screen-xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 items-center">
 				<div className="w-full md:min-w-[400px] max-w-[800px]">
 					<div className="relative w-full overflow-hidden pt-[56.25%]">

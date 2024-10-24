@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
 			<SubHero />
 			<Overview />
 			<FlyThroughVideo />
-			<Reviews numberToShow={3} showFullReviews={false} />
+			<Reviews numberToShow={6} showFullReviews={false} />
 		</>
 	);
 };
