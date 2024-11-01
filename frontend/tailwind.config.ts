@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const primaryBrown = '#573a31';
+const primaryYellow = '#f2b033';
 const black = 'rgba(0, 0, 0, 1)';
 const transparent = 'rgba(0, 0, 0, 0)';
 
@@ -9,8 +10,8 @@ const config = {
 	theme: {
 		extend: {
 			boxShadow: {
-				'button-primary': `5px 5px 0px 0px ${primaryBrown}`,
-				'button-primary-inset': `inset 2px 2px 1px 0px ${primaryBrown}`,
+				'brown-offset': `5px 5px 0px 0px ${primaryBrown}`,
+				'yellow-offset': `5px 5px 0px 0px ${primaryYellow}`,
 			},
 			colors: {
 				beige: {
@@ -85,9 +86,26 @@ const config = {
 				},
 			},
 			fontFamily: {
-				headline: ['Allerta Stencil', 'sans-serif'],
-				subheadline: ['Oswald', 'sans-serif'],
-				sans: ['Droid Serif', 'system-ui', 'sans-serif'],
+				headline: [
+					'Allerta Stencil',
+					'Impact',
+					'Arial Black',
+					'sans-serif',
+				],
+				sans: [
+					'Oswald',
+					'Arial Narrow',
+					'Helvetica Neue',
+					'sans-serif',
+				],
+				serif: [
+					'Droid Serif',
+					'Georgia',
+					'Cambria',
+					'Times New Roman',
+					'Times',
+					'serif',
+				],
 			},
 			gridTemplateRows: {
 				'custom-300': 'repeat(2, 300px)',

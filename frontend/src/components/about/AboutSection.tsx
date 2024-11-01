@@ -3,7 +3,7 @@ import React from 'react';
 const AboutSection: React.FC = () => {
 	return (
 		<div className="max-w-screen-xl bg-green-primary p-6 pb-0 mb-5 text-left mx-auto text-brown-primary">
-			<div className="bg-yellow-primary shadow-button-primary p-5 mb-4">
+			<div className="bg-yellow-primary shadow-brown-offset p-5 mb-4">
 				<div className="flex justify-center mb-8">
 					<img
 						src="/overhead.jpg"
@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
 			</div>
 
 			<div>
-				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-brown-offset p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Team
@@ -96,7 +96,7 @@ const AboutSection: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row-reverse md:space-x-8 md:space-x-reverse mt-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-brown-offset p-5 flex flex-col md:!flex-row-reverse md:space-x-8 md:space-x-reverse mt-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Land
@@ -159,7 +159,7 @@ const AboutSection: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="bg-yellow-primary shadow-button-primary p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 mb-12 md:mt-16">
+				<div className="bg-yellow-primary shadow-brown-offset p-5 flex flex-col md:!flex-row md:space-x-8 mt-12 mb-12 md:mt-16">
 					<div className="md:w-1/2">
 						<h2 className="text-4xl font-semibold mb-4">
 							The Course's Origins

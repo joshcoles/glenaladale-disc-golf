@@ -23,7 +23,7 @@ const DesktopNav: React.FC<NavProps> = ({ primary }) => {
 								>
 									<NavLink
 										className={({ isActive }) =>
-											`p-1 lg:p-4 ${isActive ? `bg-yellow-primary text-brown-primary shadow-button-primary hover:bg-yellow-500` : 'hover:bg-green-700'} flex items-center text-nowrap`
+											`p-1 lg:p-4 ${isActive ? `bg-yellow-primary text-brown-primary shadow-brown-offset hover:bg-yellow-500` : 'hover:bg-green-700'} flex items-center text-nowrap`
 										}
 										to={item.path}
 									>

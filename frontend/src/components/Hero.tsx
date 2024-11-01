@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 							<br />
 							DISC GOLF
 						</h1>
-						<h2 className="bg-yellow-primary shadow-button-primary text-brown-primary z-10 p-2 my-4 text-sm md:text-lg">
+						<h2 className="font-serif bg-yellow-primary shadow-brown-offset text-brown-primary z-10 p-2 my-4 text-sm md:text-lg">
 							A premium wooded disc golf course 20 minutes north
 							of Charlottetown, Prince Edward Island.
 						</h2>

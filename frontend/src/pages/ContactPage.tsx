@@ -59,17 +59,30 @@ const ContactPage: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-yellow-primary flex flex-grow justify-center">
-			<div className="flex flex-col items-center max-w-screen-xl w-full  md:w-[500px]">
-				<p className="text-center mt-6">
+		<section className="bg-green-900 flex flex-col flex-grow items-center">
+			<div className="max-w-screen-xl w-full my-10 text-center">
+				<h2 className="text-3xl sm:text-3xl font-bold text-beige-primary mb-2">
+					Contact Us
+				</h2>
+				<p className="text-lg sm:text-xl text-yellow-primary">
 					If you have any questions about the course, feel free to
 					reach out to us via the contact form below. You are also
 					welcome to send us an email directly via
 					info@glenaladalediscgolf.com.
 				</p>
+			</div>
+			<div className="bg-yellow-primary flex shadow-brown-offset p-5 mb-4">
+				<div className="flex justify-center mb-8">
+					<img
+						src="/team.jpg"
+						alt="Primary"
+						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
+					/>
+				</div>
+
 				<form
 					onSubmit={handleSubmit}
-					className="flex flex-col max-w-screen-xl mx-auto p-4 w-full items-stretch font-headline text-brown-950"
+					className="flex flex-col max-w-screen-xl mx-auto p-4 w-full items-stretch font-sans text-brown-950"
 				>
 					<label htmlFor="from_name" className="mb-2">
 						Name
@@ -126,7 +139,7 @@ const ContactPage: React.FC = () => {
 
 					<button
 						type="submit"
-						className="bg-green-primary hover:bg-green-700 p-4 text-white shadow-button-primary "
+						className="bg-green-primary hover:bg-green-700 p-4 text-white shadow-brown-offset "
 					>
 						Send Message
 					</button>

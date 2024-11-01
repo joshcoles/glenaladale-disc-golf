@@ -90,9 +90,12 @@ const SubHero: React.FC = () => {
 							const textColor = isEven
 								? 'text-yellow-primary'
 								: 'text-brown-primary';
+							const boxShadow = isEven
+								? 'shadow-yellow-offset'
+								: 'shadow-brown-offset';
 							return (
 								<div
-									className={`${backgroundColor} p-6 shadow-button-primary text-center`}
+									className={`${backgroundColor} p-6 ${boxShadow} text-center`}
 									key={
 										typeof item.title === 'string'
 											? item.title
@@ -107,11 +110,13 @@ const SubHero: React.FC = () => {
 										</span>
 									</div>
 									<h3
-										className={`text-xl font-semibold ${textColor}`}
+										className={`text-xl font-sans ${textColor}`}
 									>
 										{item.title}
 									</h3>
-									<p className={`mt-4 ${textColor}`}>
+									<p
+										className={`mt-4 font-serif ${textColor}`}
+									>
 										{item.description}
 									</p>
 								</div>

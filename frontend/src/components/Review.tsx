@@ -21,7 +21,7 @@ const Review: React.FC<ReviewProps> = ({
 
 	return (
 		<>
-			<div className="bg-yellow-primary p-5 shadow-button-primary text-brown-primary">
+			<div className="bg-yellow-primary p-5 shadow-brown-offset text-brown-primary">
 				<div className="flex justify-between mb-1 sm:flex-col lg:flex-row">
 					<div className="flex">
 						<img
@@ -29,7 +29,7 @@ const Review: React.FC<ReviewProps> = ({
 							src={`/${user}.jpg`}
 						/>
 						<div className="flex flex-col items-start">
-							<h2 className="font-headline text-lg text-center leading-none mb-1">
+							<h2 className="font-sans text-lg text-center leading-none mb-1">
 								@{user}
 							</h2>
 							<span className="italic text-xs text-brown-primary font-medium">

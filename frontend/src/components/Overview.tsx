@@ -5,10 +5,10 @@ const Overview: React.FC = () => {
 		<section className="bg-yellow-primary py-16 px-6">
 			<div className="max-w-screen-xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 items-center">
 				<div>
-					<h2 className="text-3xl font-bold text-gray-800 mb-4">
+					<h2 className="text-3xl font-sans text-gray-800 mb-4">
 						Welcome to Glenaladale
 					</h2>
-					<p className="text-lg text-gray-700 mb-6">
+					<p className="font-serif text-lg text-gray-700 mb-6">
 						Nestled in the historic Glenaladale Estate, our disc
 						golf course offers players a unique blend of nature,
 						history, and challenging gameplay. Established in 2022,

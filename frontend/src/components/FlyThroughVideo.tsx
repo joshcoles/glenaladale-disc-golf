@@ -15,10 +15,10 @@ const FlyThroughVideo: React.FC = () => {
 					</div>
 				</div>
 				<div>
-					<h2 className="text-3xl font-bold text-beige-200 mb-4">
+					<h2 className="text-3xl font-sans text-beige-200 mb-4">
 						Explore Our Course
 					</h2>
-					<p className="text-lg text-beige-primary">
+					<p className="text-lg font-serif text-beige-primary">
 						Take a fly-through of our course as it was in the autumn
 						of 2023. At this point in time we had recently opened
 						our red and blue layouts and had spent much of the year
