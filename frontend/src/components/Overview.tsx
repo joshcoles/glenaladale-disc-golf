@@ -9,16 +9,17 @@ const Overview: React.FC = () => {
 						Welcome to Glenaladale
 					</h2>
 					<p className="font-serif text-lg text-gray-700 mb-6">
-						Nestled in the historic Glenaladale Estate, our disc
-						golf course offers players a unique blend of nature,
-						history, and challenging gameplay. Established in 2022,
-						the course has quickly become a favorite destination for
-						disc golfers of all skill levels. Surrounded by scenic
-						woodlands and featuring a variety of hole layouts,
-						Glenaladale Disc Golf provides an unforgettable
-						experience in the heart of Prince Edward Island. Whether
-						you're a local or a visitor, join us for a round and
-						enjoy the beauty of PEI while improving your game.
+						Nestled in the woods of the historic Glenaladale Estate,
+						our disc golf course offers visitors a unique blend of
+						nature, history, and challenging wooded disc golf.
+					</p>
+					<p className="font-serif text-lg text-gray-700 mb-6">
+						Established in 2022, the course has quickly become a
+						favorite destination for disc golfers on PEI. With holes
+						ranging from technical, short par 3s to long, "bomber"
+						par 5s, the course has developed a reputation as a
+						"bomber" course with the ability to throw drivers along
+						wooded fairways.
 					</p>
 				</div>
 				<div>

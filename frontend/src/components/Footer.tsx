@@ -37,13 +37,13 @@ const Footer: React.FC = () => {
 									target="_blank"
 									href="https://www.facebook.com/glenaladalediscgolf"
 								>
-									<FaFacebook />
+									<FaFacebook className="text-xl" />
 								</a>
 								<a
 									target="_blank"
 									href="https://instagram.com/glenaladalediscgolf"
 								>
-									<FaInstagram />
+									<FaInstagram className="text-xl" />
 								</a>
 							</div>
 						</ContentSection>

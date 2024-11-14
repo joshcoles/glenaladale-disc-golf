@@ -59,7 +59,7 @@ const ContactPage: React.FC = () => {
 	};
 
 	return (
-		<section className="bg-green-900 flex flex-col flex-grow items-center">
+		<section className="bg-green-900 px-5 flex flex-col flex-grow items-center">
 			<div className="max-w-screen-xl w-full my-10 text-center">
 				<h2 className="text-3xl sm:text-3xl font-bold text-beige-primary mb-2">
 					Contact Us
@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
 					info@glenaladalediscgolf.com.
 				</p>
 			</div>
-			<div className="bg-yellow-primary flex shadow-brown-offset p-5 mb-4">
+			<div className="bg-yellow-primary flex flex-col sm:!flex-row shadow-brown-offset p-5 mb-10">
 				<div className="flex justify-center mb-8">
 					<img
 						src="/team.jpg"

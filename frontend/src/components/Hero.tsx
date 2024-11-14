@@ -9,12 +9,12 @@ const Hero: React.FC = () => {
 				<div className="absolute inset-0 mask-fade-right bg-brown-primary mix-blend-multiply"></div>
 				<div className="max-w-screen-xl w-full flex flex-col justify-center text-center items-start">
 					<div className="relative flex flex-col justify-start max-w-[600px]">
-						<h1 className="font-headline capitalize z-10 text-5xl font-extrabold text-yellow-primary sm:text-7xl md:text-7xl text-shadow-brown leading-none">
+						<h1 className="z-10 font-headline font-extrabold capitalize  text-yellow-primary text-4xl sm:text-7xl text-shadow-brown leading-none">
 							GLENALADALE
 							<br />
 							DISC GOLF
 						</h1>
-						<h2 className="font-serif bg-yellow-primary shadow-brown-offset text-brown-primary z-10 p-2 my-4 text-sm md:text-lg">
+						<h2 className="z-10 font-serif bg-yellow-primary shadow-brown-offset text-brown-primary p-2 my-4 text-sm md:text-lg">
 							A premium wooded disc golf course 20 minutes north
 							of Charlottetown, Prince Edward Island.
 						</h2>
