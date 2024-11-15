@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
 					info@glenaladalediscgolf.com.
 				</p>
 			</div>
-			<div className="bg-yellow-primary flex flex-col sm:!flex-row shadow-brown-offset p-5 mb-10">
+			<div className="bg-yellow-primary max-w-screen-xl w-full flex flex-col sm:!flex-row shadow-brown-offset p-5 mb-10">
 				<div className="flex justify-center mb-8">
 					<img
 						src="/team.jpg"

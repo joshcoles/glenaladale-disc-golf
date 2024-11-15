@@ -28,13 +28,15 @@ const Carousel: React.FC<CarouselProps> = ({
 	};
 
 	const getImageUrls = async () => {
-		const urls = [];
-		for (let i = 1; i <= 3; i++) {
+		setImageUrls(['./carousel-1.webp']);
+
+		const fetchedUrls: string[] = [];
+		for (let i = 2; i <= 3; i++) {
 			const mapRef = ref(storage, `hero-carousel/carousel-${i}.webp`);
 			const url = await getDownloadURL(mapRef);
-			urls.push(url);
+			fetchedUrls.push(url);
 		}
-		setImageUrls(urls);
+		setImageUrls((prev) => [...prev, ...fetchedUrls]);
 	};
 
 	const handleFirstImageLoad = () => {
@@ -43,7 +45,9 @@ const Carousel: React.FC<CarouselProps> = ({
 
 	useEffect(() => {
 		getImageUrls();
+	}, []);
 
+	useEffect(() => {
 		if (!autoPlay) {
 			return;
 		}
@@ -69,7 +73,6 @@ const Carousel: React.FC<CarouselProps> = ({
 								isFirstImageLoaded ? 'opacity-0' : 'opacity-100'
 							}`}
 						></div>
-
 						<img
 							src={src}
 							alt={`Slide ${index + 1}`}
