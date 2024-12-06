@@ -9,6 +9,7 @@ const NavBar: React.FC = () => {
 			{ text: 'Home', path: '/', external: false },
 			{ text: 'About', path: '/about', external: false },
 			{ text: 'FAQ', path: '/faq', external: false },
+			{ text: 'Memberships', path: '/memberships', external: false },
 			{ text: 'Gallery', path: '/gallery', external: false },
 			{
 				text: 'UDisc',

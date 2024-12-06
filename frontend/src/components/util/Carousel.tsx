@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { storage, ref, getDownloadURL } from '../../helpers/firebase';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
 interface CarouselProps {
-	navigable: boolean;
-	autoPlay: boolean;
+	navigable?: boolean;
+	autoPlay?: boolean;
+	aspectW?: string;
+	aspectH?: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
 	navigable = false,
 	autoPlay = true,
+	aspectW = 'aspect-w-16',
+	aspectH = 'aspect-h-9',
 }) => {
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
 	const [imageUrls, setImageUrls] = useState<string[]>([]);
@@ -28,15 +33,20 @@ const Carousel: React.FC<CarouselProps> = ({
 	};
 
 	const getImageUrls = async () => {
-		setImageUrls(['./carousel-1.webp']);
+		try {
+			// Serving first slide locally for faster initial load
+			setImageUrls(['./carousel-1.webp']);
 
-		const fetchedUrls: string[] = [];
-		for (let i = 2; i <= 3; i++) {
-			const mapRef = ref(storage, `hero-carousel/carousel-${i}.webp`);
-			const url = await getDownloadURL(mapRef);
-			fetchedUrls.push(url);
+			const fetchedUrls: string[] = [];
+			for (let i = 2; i <= 3; i++) {
+				const mapRef = ref(storage, `hero-carousel/carousel-${i}.webp`);
+				const url = await getDownloadURL(mapRef);
+				fetchedUrls.push(url);
+			}
+			setImageUrls((prev) => [...prev, ...fetchedUrls]);
+		} catch (error) {
+			console.error(error);
 		}
-		setImageUrls((prev) => [...prev, ...fetchedUrls]);
 	};
 
 	const handleFirstImageLoad = () => {
@@ -66,7 +76,7 @@ const Carousel: React.FC<CarouselProps> = ({
 				{imageUrls.map((src, index) => (
 					<div
 						key={index}
-						className="flex-shrink-0 w-full aspect-w-16 aspect-h-9 relative"
+						className={`flex-shrink-0 w-full ${aspectW} ${aspectH} relative`}
 					>
 						<div
 							className={`absolute inset-0 bg-black transition-opacity ${
@@ -84,7 +94,7 @@ const Carousel: React.FC<CarouselProps> = ({
 							onLoad={
 								index === 0 ? handleFirstImageLoad : undefined
 							}
-							loading="lazy"
+							loading={index === 0 ? 'eager' : 'lazy'}
 						/>
 					</div>
 				))}
@@ -96,13 +106,13 @@ const Carousel: React.FC<CarouselProps> = ({
 						onClick={prevSlide}
 						className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-white rounded-full shadow-lg"
 					>
-						&#10094;
+						<FaAngleLeft className="text-8xl"></FaAngleLeft>
 					</button>
 					<button
 						onClick={nextSlide}
 						className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-white rounded-full shadow-lg"
 					>
-						&#10095;
+						<FaAngleRight className="text-8xl"></FaAngleRight>
 					</button>
 				</>
 			)}
