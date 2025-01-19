@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => {
 					operators <strong>Josh Coles</strong>,{' '}
 					<strong>Andrew Clark</strong> and{' '}
 					<strong>Patrick Callbeck</strong>. The three are close
-					friends and avid disc golfers. and wanted to try their hand
+					friends and avid disc golfers. They wanted to try their hand
 					at adding to the list of world-class destination disc golf
 					courses on PEI, and to create one with a strong community.
 				</p>
@@ -43,11 +43,11 @@ const AboutSection: React.FC = () => {
 							The Team
 						</h2>
 						<p className="mb-2 font-bold">
-							The course is operated by the three primary owners
-							with help from volunteers, friends and family. The
-							land on which the course lies belongs to the
-							Glenaladale Heritage Trust, and is leased to the
-							course owners.
+							The course is operated and maintained by the three
+							primary owners with help from volunteers, friends
+							and family. The land on which the course lies
+							belongs to the Glenaladale Heritage Trust, and is
+							leased to the course owners.
 						</p>
 						<p className="mb-2">
 							<strong>Andrew</strong> is a climate data and policy
@@ -66,7 +66,7 @@ const AboutSection: React.FC = () => {
 							Farm, which had just opened. He continued to play
 							casually after moving to Vancouver and then Toronto,
 							where he became interested in the competitive side
-							of Disc Golf. His moving back to PEI coincided with
+							of disc golf. His moving back to PEI coincided with
 							the development and opening of the course.
 						</p>
 						<p className="mb-2">
@@ -136,7 +136,7 @@ const AboutSection: React.FC = () => {
 							others, certain holes were changed significantly.
 							Hole 13 lost nearly every tree on its fairway—over
 							15 mature birch trees. Half of hole 16 was
-							destroyed, requiring well over 100 hours of manual
+							destroyed, requiring 100s of hours of manual
 							cleanup. Holes 7 and 18 both lost 100+ year old
 							mature, prominent pine trees. Thousands of trees
 							were lost in total, slowing down the progress of the
@@ -185,11 +185,12 @@ const AboutSection: React.FC = () => {
 							The initial course build was financed largely by an
 							ACOA grant, which the heritage trust helped the disc
 							golf team acquire. Since then the course has been
-							financed by course revenue, which has then been
-							reinvested into the course each year. The long-term
-							plan for the course is to continue reinvesting any
-							income into the development of the course to turn it
-							into a world-class disc golf destination.
+							self-sufficient, reinvesting revenue from
+							memberships and day access back into the course. The
+							long-term plan for the course is to continue
+							reinvesting any income into the development of the
+							course to turn it into a world-class disc golf
+							destination.
 						</p>
 					</div>
 					<div className="mt-4 md:mt-0 md:w-1/2">

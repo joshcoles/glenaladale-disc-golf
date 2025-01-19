@@ -15,11 +15,11 @@ const Overview: React.FC = () => {
 					</p>
 					<p className="font-serif text-lg text-gray-700 mb-6">
 						Established in 2022, the course has quickly become a
-						favorite destination for disc golfers on PEI. With holes
-						ranging from technical, short par 3s to long, "bomber"
-						par 5s, the course has developed a reputation as a
-						"bomber" course with the ability to throw drivers along
-						wooded fairways.
+						favourite destination for disc golfers on PEI. With
+						holes ranging from technical, short par 3s to long,
+						winding par 5s, the course has developed a reputation as
+						a "bomber" course with the ability to throw drivers
+						along wooded fairways.
 					</p>
 				</div>
 				<div>
