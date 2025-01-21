@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
+import LoadingSpinner from '../components/util/LoadingSpinner';
 
-type FormState =
-	| 'in-progress'
-	| 'processing'
-	| 'submitted-success'
-	| 'submitted-error';
+type FormState = 'default' | 'processing' | 'success' | 'error';
 
 const MembershipsPage: React.FC = () => {
 	const sheetEndpointId = import.meta.env
@@ -15,18 +12,29 @@ const MembershipsPage: React.FC = () => {
 		waiver: false,
 		notes: '',
 	});
-	const [formState, setFormState] = useState<FormState>('in-progress');
+	const [formState, setFormState] = useState<FormState>('default');
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
-		const { name, type, value } = e.target as HTMLInputElement;
-		const checked = (e.target as HTMLInputElement).checked;
+		const { name, type, value } = e.target;
+		const checked =
+			type === 'checkbox' && (e.target as HTMLInputElement).checked;
+
 		setFormData({
 			...formData,
 			[name]: type === 'checkbox' ? checked : value,
 		});
 	};
+
+	const isFormValid = (): boolean => {
+		return (
+			formData.name.trim() !== '' &&
+			formData.email.trim() !== '' &&
+			formData.waiver
+		);
+	};
+
 	const handleSubmit = (e: React.FormEvent) => {
 		setFormState('processing');
 		e.preventDefault();
@@ -40,37 +48,46 @@ const MembershipsPage: React.FC = () => {
 
 		const formDataToSubmit = new URLSearchParams(data).toString();
 
+		if (!sheetEndpointId) {
+			console.error('Google Sheets endpoint ID is not configured.');
+			setFormState('error');
+			return;
+		}
+
 		fetch(sheetEndpoint, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			body: formDataToSubmit,
-			mode: 'cors',
 		})
 			.then((response) => {
 				if (response.ok) {
-					console.log('Form submitted successfully');
-					setFormState('submitted-success');
+					setFormState('success');
+					setFormData({
+						name: '',
+						email: '',
+						waiver: false,
+						notes: '',
+					});
 				} else {
 					console.error(
 						'Form submission failed:',
 						response.statusText,
 					);
+					setFormState('error');
 				}
 			})
 			.catch((error) => {
 				console.error('Error during form submission:', error);
+				setFormState('error');
 			});
 	};
 
 	const formMarkup = (
-		<form
-			className="flex flex-col max-w-screen-xl mx-auto p-4 w-full items-stretch font-sans text-brown-950"
-			onSubmit={handleSubmit}
-		>
-			<label htmlFor="name" className="text-xl 1mb-2">
-				Name
+		<form className="flex flex-col" onSubmit={handleSubmit}>
+			<label htmlFor="name" className="text-xl mb-2">
+				Name *
 			</label>
 			<input
 				type="text"
@@ -79,11 +96,12 @@ const MembershipsPage: React.FC = () => {
 				value={formData.name}
 				onChange={handleChange}
 				className="mb-4 p-2 border border-gray-300 rounded"
+				aria-required="true"
 				required
 			/>
 
 			<label htmlFor="email" className="text-xl mb-2">
-				Email
+				Email *
 			</label>
 			<input
 				type="email"
@@ -92,11 +110,12 @@ const MembershipsPage: React.FC = () => {
 				value={formData.email}
 				onChange={handleChange}
 				className="mb-4 p-2 border border-gray-300 rounded"
+				aria-required="true"
 				required
 			/>
 
 			<label htmlFor="notes" className="text-xl mb-2">
-				Notes (Optional)
+				Notes
 			</label>
 			<textarea
 				id="notes"
@@ -107,7 +126,7 @@ const MembershipsPage: React.FC = () => {
 				placeholder="Add any additional information or notes here."
 			/>
 
-			<p className="text-xl mb-2">Waiver</p>
+			<p className="text-xl mb-2">Waiver *</p>
 
 			<div className="text-sm">
 				<p className="mb-2">
@@ -182,11 +201,18 @@ const MembershipsPage: React.FC = () => {
 					checked={formData.waiver}
 					onChange={handleChange}
 					className="mb-2"
+					required
+					aria-required="true"
 				/>
 			</div>
 			<button
 				type="submit"
-				className="bg-green-primary hover:bg-green-700 p-4 text-white shadow-brown-offset "
+				disabled={!isFormValid()}
+				className={`p-4 cursor-pointer text-white shadow-brown-offset ${
+					formData.waiver
+						? 'bg-green-primary hover:bg-green-700'
+						: 'bg-gray-400 cursor-not-allowed'
+				}`}
 			>
 				Submit
 			</button>
@@ -201,8 +227,8 @@ const MembershipsPage: React.FC = () => {
 				</h2>
 				<p className="text-lg sm:text-xl text-yellow-primary">
 					Please fill out the form below to register for a{' '}
-					{new Date().getFullYear()} membership, and we will contact
-					you to get you your membership tag.
+					{new Date().getFullYear()} membership, and we will be in
+					touch with you shortly.
 				</p>
 			</div>
 			<div className="bg-yellow-primary max-w-screen-xl w-full flex flex-col sm:!flex-row shadow-brown-offset p-5 mb-10">
@@ -213,18 +239,36 @@ const MembershipsPage: React.FC = () => {
 						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
 					/>
 				</div>
-				{formState === 'in-progress' && formMarkup}
-				{formState === 'submitted-success' && (
-					<div className="flex flex-col max-w-screen-xl mx-auto p-4 w-full items-stretch font-sans text-brown-950 text-center">
-						<span>Thank you for supporting the course.</span>
-						<span>
-							Please e-transfer your membership fee to
-							info@glenaladalediscgolf.com.
-						</span>
-						Thank you for supporting the course.
-						<span></span>
-					</div>
-				)}
+				<div className="flex flex-col max-w-screen-xl mx-auto p-4 w-full items-stretch font-sans text-brown-950">
+					{formState === 'default' && formMarkup}
+					{formState === 'processing' && (
+						<LoadingSpinner spinnerColor="text-brown-950" />
+					)}
+
+					{formState === 'success' && (
+						<div className="flex flex-col flex-1 max-w-screen-xl mx-auto p-4 w-full justify-center font-sans text-brown-950 text-center">
+							<span>Thank you for supporting the course.</span>
+							<span>
+								Please e-transfer your membership fee to
+								info@glenaladalediscgolf.com and we will be in
+								touch shortly.
+							</span>
+						</div>
+					)}
+					{formState === 'error' && (
+						<div className="flex flex-col flex-1 max-w-screen-xl mx-auto p-4 w-full justify-center font-sans text-brown-950 text-center">
+							<span>
+								We're sorry, there was an error with the
+								membership registration form.
+							</span>
+							<span>
+								Please reach out to us via
+								info@glenaladalediscgolf.com to complete your
+								registration.
+							</span>
+						</div>
+					)}
+				</div>
 			</div>
 		</section>
 	);
