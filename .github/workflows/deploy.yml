@@ -41,7 +41,7 @@ jobs:
           npm run build
 
       - name: Set up Firebase CLI
-        uses: wzieba/Firebase-Action@v2
+        uses: firebase/actions/setup-firebase@v2
         with:
           firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}
 
