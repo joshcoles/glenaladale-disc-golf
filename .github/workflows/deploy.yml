@@ -34,11 +34,17 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd frontend
           npm ci
 
       - name: Build project
         run: |
+          cd frontend
           npm run build
+
+      - name: Show Firebase Version
+        run: |
+          firebase --version
 
       - name: Set up Firebase CLI
         uses: w9jds/setup-firebase@main
