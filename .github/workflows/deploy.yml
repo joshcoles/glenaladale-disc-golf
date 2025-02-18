@@ -41,8 +41,9 @@ jobs:
           npm run build
 
       - name: Set up Firebase CLI
-        uses: firebase/actions/setup-firebase@v2
+        uses: w9jds/setup-firebase@main
         with:
+          tools-version: 13.31.1
           firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}
 
       - name: Deploy to Firebase Hosting
