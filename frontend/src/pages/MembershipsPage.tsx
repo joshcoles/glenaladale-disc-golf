@@ -209,7 +209,7 @@ const MembershipsPage: React.FC = () => {
 				type="submit"
 				disabled={!isFormValid()}
 				className={`p-4 cursor-pointer text-white shadow-brown-offset ${
-					formData.waiver
+					isFormValid()
 						? 'bg-green-primary hover:bg-green-700'
 						: 'bg-gray-400 cursor-not-allowed'
 				}`}

@@ -44,7 +44,7 @@ const SubHero: React.FC = () => {
 			icon: 'star' as IconType,
 			title: (
 				<>
-					4.6 Rating on{' '}
+					Highly rated on{' '}
 					<a
 						href="https://udisc.com/courses/glenaladale-disc-golf-course-gl5b"
 						className="underline"
