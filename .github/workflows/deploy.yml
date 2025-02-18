@@ -50,4 +50,5 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         run: |
+          cd frontend
           firebase deploy --only hosting
