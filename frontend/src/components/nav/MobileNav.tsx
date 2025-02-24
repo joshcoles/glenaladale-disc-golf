@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { NavProps } from '../../types';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 const MobileNav: React.FC<NavProps> = ({ primary }) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -29,11 +30,18 @@ const MobileNav: React.FC<NavProps> = ({ primary }) => {
 						className="bg-yellow-primary p-4 flex justify-center hover:bg-yellow-500 font-headline"
 						key={index}
 						to={link.path}
+						target={link.external ? '_blank' : undefined}
+						rel={link.external ? 'noopener noreferrer' : undefined}
 						onClick={() =>
 							setMobileMenuOpen((prevState) => !prevState)
 						}
 					>
-						{link.text}
+						{link.text}{' '}
+						{link.external ? (
+							<FaArrowUpRightFromSquare className="ml-1 text-xs mb-2" />
+						) : (
+							''
+						)}
 					</NavLink>
 				))}
 			</div>

@@ -26,6 +26,14 @@ const DesktopNav: React.FC<NavProps> = ({ primary }) => {
 											`p-1 lg:p-4 ${isActive ? `bg-yellow-primary text-brown-primary shadow-brown-offset hover:bg-yellow-500` : 'hover:bg-green-700'} flex items-center text-nowrap`
 										}
 										to={item.path}
+										target={
+											item.external ? '_blank' : undefined
+										}
+										rel={
+											item.external
+												? 'noopener noreferrer'
+												: undefined
+										}
 									>
 										{item.text}{' '}
 										{item.external ? (
