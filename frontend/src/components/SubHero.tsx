@@ -56,7 +56,7 @@ const SubHero: React.FC = () => {
 				</>
 			),
 			description:
-				'In 2024, UDisc users ranked us the 3rd best course on PEI!',
+				'In 2024 & 2025, UDisc users ranked us the 3rd best course on PEI!',
 		},
 		{
 			icon: 'money' as IconType,
