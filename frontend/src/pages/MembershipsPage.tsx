@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import LoadingSpinner from '../components/util/LoadingSpinner';
 
 type FormState = 'default' | 'processing' | 'success' | 'error';
@@ -221,6 +222,29 @@ const MembershipsPage: React.FC = () => {
 
 	return (
 		<section className="bg-green-900 px-5 flex flex-col flex-grow items-center">
+			<Helmet>
+				<title>Membership Registration - Glenaladale Disc Golf</title>
+				<meta
+					name="description"
+					content="Register for a Glenaladale Disc Golf membership. Join our disc golf community and enjoy exclusive benefits at PEI's premier wooded disc golf course."
+				/>
+				<link
+					rel="canonical"
+					href="https://glenaladalediscgolf.com/memberships"
+				/>
+				<meta
+					property="og:title"
+					content="Membership Registration - Glenaladale Disc Golf"
+				/>
+				<meta
+					property="og:description"
+					content="Register for a Glenaladale Disc Golf membership and join our disc golf community."
+				/>
+				<meta
+					property="og:url"
+					content="https://glenaladalediscgolf.com/memberships"
+				/>
+			</Helmet>
 			<div className="max-w-screen-xl w-full my-10 text-center">
 				<h2 className="text-3xl sm:text-3xl font-bold text-beige-primary mb-2">
 					Membership Registration
@@ -235,7 +259,7 @@ const MembershipsPage: React.FC = () => {
 				<div className="flex justify-center mb-8">
 					<img
 						src="/overhead-2.jpg"
-						alt="Primary"
+						alt="Aerial view of Glenaladale Disc Golf Course holes and surrounding estate"
 						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
 					/>
 				</div>

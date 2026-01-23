@@ -85,7 +85,7 @@ const Carousel: React.FC<CarouselProps> = ({
 						></div>
 						<img
 							src={src}
-							alt={`Slide ${index + 1}`}
+							alt={`Glenaladale Disc Golf Course - Scenic view ${index + 1}`}
 							className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
 								isFirstImageLoaded || index !== 0
 									? 'opacity-100'

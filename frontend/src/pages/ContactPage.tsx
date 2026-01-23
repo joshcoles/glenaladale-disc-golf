@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 
 const ContactPage: React.FC = () => {
@@ -60,6 +61,29 @@ const ContactPage: React.FC = () => {
 
 	return (
 		<section className="bg-green-900 px-5 flex flex-col flex-grow items-center">
+			<Helmet>
+				<title>Contact Us - Glenaladale Disc Golf</title>
+				<meta
+					name="description"
+					content="Contact Glenaladale Disc Golf for questions about the course, memberships, events, or general inquiries. Email us at info@glenaladalediscgolf.com."
+				/>
+				<link
+					rel="canonical"
+					href="https://glenaladalediscgolf.com/contact"
+				/>
+				<meta
+					property="og:title"
+					content="Contact Us - Glenaladale Disc Golf"
+				/>
+				<meta
+					property="og:description"
+					content="Contact Glenaladale Disc Golf for questions about the course, memberships, and events."
+				/>
+				<meta
+					property="og:url"
+					content="https://glenaladalediscgolf.com/contact"
+				/>
+			</Helmet>
 			<div className="max-w-screen-xl w-full my-10 text-center">
 				<h2 className="text-3xl sm:text-3xl font-bold text-beige-primary mb-2">
 					Contact Us
@@ -75,7 +99,7 @@ const ContactPage: React.FC = () => {
 				<div className="flex justify-center mb-8">
 					<img
 						src="/team.jpg"
-						alt="Primary"
+						alt="Glenaladale Disc Golf course management team"
 						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
 					/>
 				</div>

@@ -164,7 +164,7 @@ const CourseMapsSection: React.FC = () => {
 							<img
 								className="w-full h-auto"
 								src={url}
-								alt={`Course Map ${index + 1}`}
+								alt={`Glenaladale Disc Golf hole ${index + 1} course map`}
 							/>
 						) : (
 							<div className="h-60 min-h-60 flex items-center justify-center">

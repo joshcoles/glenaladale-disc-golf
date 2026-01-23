@@ -7,7 +7,7 @@ const AboutSection: React.FC = () => {
 				<div className="flex justify-center mb-8">
 					<img
 						src="/overhead.jpg"
-						alt="Primary"
+						alt="Aerial view of Glenaladale Disc Golf Course surrounded by forest"
 						className="w-full h-auto max-h-[500px] object-cover rounded-lg"
 					/>
 				</div>
@@ -84,7 +84,7 @@ const AboutSection: React.FC = () => {
 					<div className="mt-4 md:mt-0 md:w-1/2">
 						<img
 							src="team.jpg"
-							alt="Section 1"
+							alt="Glenaladale Disc Golf team - Patrick Callbeck, Andrew Clark, Alexis Bulman, and Josh Coles"
 							className="w-full h-auto rounded-lg object-cover"
 						/>
 						<figcaption className="mb-2 text-xs">
@@ -147,7 +147,7 @@ const AboutSection: React.FC = () => {
 					<div className="mt-4 md:mt-0 md:w-1/2">
 						<img
 							src="overhead-2.jpg"
-							alt="Section 2"
+							alt="Aerial view of Glenaladale Estate with disc golf holes, field, schoolhouse, and Tracadie Harbour"
 							className="w-full h-auto rounded-lg object-cover"
 						/>
 						<figcaption className="mb-2 text-xs">
@@ -196,7 +196,7 @@ const AboutSection: React.FC = () => {
 					<div className="mt-4 md:mt-0 md:w-1/2">
 						<img
 							src="build.jpg"
-							alt="Section 3"
+							alt="Construction of hole 2 tee pad at Glenaladale Disc Golf Course"
 							className="w-full h-auto rounded-lg object-cover"
 						/>
 						<figcaption className="mb-2 text-xs">
