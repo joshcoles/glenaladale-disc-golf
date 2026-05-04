@@ -72,3 +72,9 @@ node_modules/
 
 # misc
 TODO.md
+
+# Claude Code local settings (personal permission overrides)
+.claude/settings.local.json
+
+# Playwright MCP session logs
+.playwright-mcp/
