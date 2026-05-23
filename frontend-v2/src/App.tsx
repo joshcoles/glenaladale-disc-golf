@@ -11,6 +11,7 @@ import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
 import MembershipsPage from './pages/MembershipsPage';
 import GalleryPage from './pages/GalleryPage';
+import CourseDesignPage from './pages/CourseDesignPage';
 import MainLayout from './layouts/MainLayout';
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/gallery" element={<GalleryPage />} />
       <Route path="/reviews" element={<ReviewsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/course-design" element={<CourseDesignPage />} />
     </Route>,
   ),
 );

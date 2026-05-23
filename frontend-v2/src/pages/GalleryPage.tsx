@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import PageHeader from '../components/ui/PageHeader';
 import HolePhotosSection from '../components/gallery/HolePhotosSection';
 import CourseMapsSection from '../components/gallery/CourseMapsSection';
+import MiscPhotosSection from '../components/gallery/MiscPhotosSection';
 
-type Tab = 'photos' | 'maps';
+type Tab = 'photos' | 'maps' | 'misc';
 
 const GalleryPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('photos');
@@ -18,7 +19,7 @@ const GalleryPage: React.FC = () => {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex border-b border-gray-200 mb-10">
-            {([['photos', 'Hole Photos'], ['maps', 'Course Maps']] as [Tab, string][]).map(
+            {([['photos', 'Hole Photos'], ['maps', 'Course Maps'], ['misc', 'Other Photos']] as [Tab, string][]).map(
               ([tab, label]) => (
                 <button
                   key={tab}
@@ -50,6 +51,15 @@ const GalleryPage: React.FC = () => {
                 Click any map to view it full size. Use the arrows to navigate between holes.
               </p>
               <CourseMapsSection />
+            </div>
+          )}
+
+          {activeTab === 'misc' && (
+            <div>
+              <p className="font-sans font-light text-sm text-gray-400 tracking-wide mb-6">
+                A collection of photos from around the course.
+              </p>
+              <MiscPhotosSection />
             </div>
           )}
         </div>

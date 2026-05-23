@@ -8,6 +8,7 @@ const navLinks = [
   { to: '/faq', label: 'FAQ' },
   { to: '/memberships', label: 'Memberships' },
   { to: '/contact', label: 'Contact' },
+  { to: '/course-design', label: 'Course Design' },
 ];
 
 const Footer: React.FC = () => (

@@ -81,12 +81,12 @@ const CourseMapsSection: React.FC = () => {
         onNext={handleNext}
       />
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {thumbnails.map((url, index) => (
           <button
             key={index}
             onClick={() => openLightbox(index)}
-            className="relative aspect-square bg-green-900 flex items-center justify-center overflow-hidden group hover:ring-2 hover:ring-yellow-primary transition-all"
+            className="relative aspect-[3/4] bg-green-900 flex items-center justify-center overflow-hidden group hover:ring-2 hover:ring-yellow-primary transition-all"
             aria-label={`View Hole ${index + 1} course map`}
           >
             {url ? (
@@ -94,12 +94,9 @@ const CourseMapsSection: React.FC = () => {
                 <img
                   src={url}
                   alt={`Hole ${index + 1} course map`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-[calc(100%-16px)] h-[calc(100%-16px)] object-contain group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-green-950/0 group-hover:bg-green-950/20 transition-colors" />
-                <span className="absolute bottom-1.5 left-2 font-headline text-white text-xs tracking-wide drop-shadow">
-                  Hole {index + 1}
-                </span>
               </>
             ) : (
               <LoadingSpinner light />

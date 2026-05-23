@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { storage, ref, listAll, getDownloadURL } from '../../lib/firebase';
 import { holes } from '../../data/holes';
 import Lightbox from '../ui/Lightbox';
 import LoadingSpinner from '../ui/LoadingSpinner';
 
 interface HoleState {
-  status: 'idle' | 'loading' | 'empty' | 'ready';
+  status: 'loading' | 'empty' | 'ready';
   photos: string[];
 }
 
@@ -13,40 +13,32 @@ const HolePhotosSection: React.FC = () => {
   const [holeStates, setHoleStates] = useState<Record<number, HoleState>>({});
   const [lightbox, setLightbox] = useState<{ hole: number; index: number } | null>(null);
 
-  const fetchHolePhotos = useCallback(async (holeNumber: number) => {
-    setHoleStates((prev) => ({
-      ...prev,
-      [holeNumber]: { status: 'loading', photos: [] },
-    }));
+  useEffect(() => {
+    const loadHole = async (holeNumber: number) => {
+      setHoleStates((prev) => ({ ...prev, [holeNumber]: { status: 'loading', photos: [] } }));
+      try {
+        const folderRef = ref(storage, `holes/hole-${String(holeNumber).padStart(2, '0')}/`);
+        const result = await listAll(folderRef);
+        const sortedItems = [...result.items]
+          .filter((item) => item.name.toLowerCase().endsWith('.jpg'))
+          .sort((a, b) => a.name.localeCompare(b.name));
 
-    try {
-      const folderRef = ref(storage, `hole-photos/hole-${holeNumber}/`);
-      const result = await listAll(folderRef);
+        if (sortedItems.length === 0) {
+          setHoleStates((prev) => ({ ...prev, [holeNumber]: { status: 'empty', photos: [] } }));
+          return;
+        }
 
-      if (result.items.length === 0) {
-        setHoleStates((prev) => ({
-          ...prev,
-          [holeNumber]: { status: 'empty', photos: [] },
-        }));
-        return;
+        const urls = await Promise.all(sortedItems.map((item) => getDownloadURL(item)));
+        setHoleStates((prev) => ({ ...prev, [holeNumber]: { status: 'ready', photos: urls } }));
+      } catch {
+        setHoleStates((prev) => ({ ...prev, [holeNumber]: { status: 'empty', photos: [] } }));
       }
+    };
 
-      const urls = await Promise.all(result.items.map((item) => getDownloadURL(item)));
-      setHoleStates((prev) => ({
-        ...prev,
-        [holeNumber]: { status: 'ready', photos: urls },
-      }));
-    } catch {
-      setHoleStates((prev) => ({
-        ...prev,
-        [holeNumber]: { status: 'empty', photos: [] },
-      }));
-    }
+    holes.forEach((holeNumber) => loadHole(holeNumber));
   }, []);
 
   const activeLightboxState = lightbox ? holeStates[lightbox.hole] : null;
-
-  const handleCloseLightbox = () => setLightbox(null);
 
   const handlePrev = () => {
     if (!lightbox || !activeLightboxState) return;
@@ -72,7 +64,7 @@ const HolePhotosSection: React.FC = () => {
           images={activeLightboxState.photos}
           currentIndex={lightbox.index}
           label={`Hole ${lightbox.hole}`}
-          onClose={handleCloseLightbox}
+          onClose={() => setLightbox(null)}
           onPrev={handlePrev}
           onNext={handleNext}
         />
@@ -81,26 +73,20 @@ const HolePhotosSection: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
         {holes.map((holeNumber) => {
           const state = holeStates[holeNumber];
-          const isLoading = state?.status === 'loading';
+          const isLoading = !state || state.status === 'loading';
           const isEmpty = state?.status === 'empty';
           const isReady = state?.status === 'ready';
 
           return (
             <button
               key={holeNumber}
-              onClick={() => {
-                if (isReady) {
-                  setLightbox({ hole: holeNumber, index: 0 });
-                } else if (!isLoading) {
-                  fetchHolePhotos(holeNumber);
-                }
-              }}
+              onClick={() => isReady && setLightbox({ hole: holeNumber, index: 0 })}
               className={`relative aspect-square flex flex-col items-center justify-center overflow-hidden group transition-all ${
                 isEmpty
                   ? 'bg-green-900/40 cursor-default'
                   : isReady
                   ? 'bg-green-900 hover:ring-2 hover:ring-yellow-primary cursor-pointer'
-                  : 'bg-green-900 hover:ring-2 hover:ring-yellow-primary/50 cursor-pointer'
+                  : 'bg-green-900 cursor-default'
               }`}
               aria-label={`View photos for Hole ${holeNumber}`}
             >
@@ -131,20 +117,7 @@ const HolePhotosSection: React.FC = () => {
                     Coming soon
                   </p>
                 </div>
-              ) : (
-                <div className={`flex flex-col items-center gap-1 ${isReady ? 'relative' : ''}`}>
-                  <p className="font-headline text-white text-sm tracking-wide drop-shadow">
-                    Hole {holeNumber}
-                  </p>
-                  {!isReady && (
-                    <p className="font-sans font-light text-white/60 text-xs tracking-wider">
-                      Tap to load
-                    </p>
-                  )}
-                </div>
-              )}
-
-              {isReady && (
+              ) : isReady && (
                 <span className="absolute bottom-1.5 left-2 font-headline text-white text-xs tracking-wide drop-shadow">
                   Hole {holeNumber}
                 </span>
