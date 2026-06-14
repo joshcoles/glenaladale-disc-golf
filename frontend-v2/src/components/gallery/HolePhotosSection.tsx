@@ -12,8 +12,18 @@ interface HoleState {
 const HolePhotosSection: React.FC = () => {
   const [holeStates, setHoleStates] = useState<Record<number, HoleState>>({});
   const [lightbox, setLightbox] = useState<{ hole: number; index: number } | null>(null);
+  const [meta, setMeta] = useState<Record<string, string>>({});
 
   useEffect(() => {
+    const loadMeta = async () => {
+      try {
+        const res = await fetch('/gallery-metadata.json');
+        setMeta(((await res.json()).holes) ?? {});
+      } catch {
+        // metadata.json missing or unreadable — descriptions will be absent
+      }
+    };
+
     const loadHole = async (holeNumber: number) => {
       setHoleStates((prev) => ({ ...prev, [holeNumber]: { status: 'loading', photos: [] } }));
       try {
@@ -35,6 +45,7 @@ const HolePhotosSection: React.FC = () => {
       }
     };
 
+    loadMeta();
     holes.forEach((holeNumber) => loadHole(holeNumber));
   }, []);
 
@@ -63,7 +74,7 @@ const HolePhotosSection: React.FC = () => {
           isOpen
           images={activeLightboxState.photos}
           currentIndex={lightbox.index}
-          label={`Hole ${lightbox.hole}`}
+          label={`Hole ${lightbox.hole}${meta[String(lightbox.hole)] ? `. ${meta[String(lightbox.hole)]}` : ''}`}
           onClose={() => setLightbox(null)}
           onPrev={handlePrev}
           onNext={handleNext}

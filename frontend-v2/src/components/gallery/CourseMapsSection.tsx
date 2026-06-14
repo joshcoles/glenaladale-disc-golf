@@ -11,8 +11,19 @@ const CourseMapsSection: React.FC = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxLoading, setLightboxLoading] = useState(false);
+  const [meta, setMeta] = useState<Record<string, string>>({});
 
   useEffect(() => {
+    const loadMeta = async () => {
+      try {
+        const res = await fetch('/gallery-metadata.json');
+        setMeta(((await res.json()).maps) ?? {});
+      } catch {
+        // metadata.json missing or unreadable — descriptions will be absent
+      }
+    };
+    loadMeta();
+
     const loadThumbnails = async () => {
       for (let i = 1; i <= HOLE_COUNT; i++) {
         try {
@@ -75,7 +86,7 @@ const CourseMapsSection: React.FC = () => {
         images={fullImages}
         currentIndex={currentIndex}
         loading={lightboxLoading}
-        label={`Hole ${currentIndex + 1} Course Map`}
+        label={`Hole ${currentIndex + 1} Course Map${meta[String(currentIndex + 1)] ? `. ${meta[String(currentIndex + 1)]}` : ''}`}
         onClose={() => setLightboxOpen(false)}
         onPrev={handlePrev}
         onNext={handleNext}
