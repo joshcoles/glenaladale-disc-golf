@@ -78,9 +78,9 @@ const AboutPage: React.FC = () => (
       </p>
       <p>
         At approximately 7,000 ft long from the red layout and 8,000 ft from the blue layout,
-        the course is a challenging mix of woods and open disc golf. Newer players can enjoy the
-        challenge and scale of the course while competitive players can challenge themselves on
-        long and technical holes.
+        the course is a challenging mix of woods and open disc golf. A shorter Green layout (~4,500 ft)
+        is also available for less experienced players, while competitive players can challenge themselves
+        on long and technical holes.
       </p>
     </Section>
 

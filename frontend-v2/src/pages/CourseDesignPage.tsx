@@ -54,7 +54,7 @@ const CourseDesignPage: React.FC = () => (
     <PageHeader
       title="Course Design"
       subtitle="We design courses that are suited to their terrain and to the people who play them. From initial site analysis through installation, we manage the full process."
-      image="/build.jpg"
+      image="/bridge.jpg"
     />
 
     {/* The Approach — white */}
@@ -83,7 +83,7 @@ const CourseDesignPage: React.FC = () => (
           </p>
         </div>
         <SectionPhoto
-          src="/overhead.jpg"
+          src="/patrick-scouting.jpg"
           alt="Aerial terrain analysis and hole routing"
         />
       </div>
