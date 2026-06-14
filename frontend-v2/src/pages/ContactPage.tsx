@@ -17,6 +17,7 @@ const ContactPage: React.FC = () => {
     from_phone: '',
     message: '',
   });
+  const [honeypot, setHoneypot] = useState('');
   const [formState, setFormState] = useState<FormState>('default');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,6 +27,10 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (honeypot) {
+      setFormState('success');
+      return;
+    }
     setFormState('processing');
 
     emailjs
@@ -144,6 +149,16 @@ const ContactPage: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  <div className="absolute -left-[9999px] top-0 w-px h-px overflow-hidden" aria-hidden="true">
+                    <input
+                      type="text"
+                      name="website"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div>
                     <label htmlFor="from_name" className={labelClass}>Name *</label>
                     <input
