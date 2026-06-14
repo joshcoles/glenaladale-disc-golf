@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CourseOverview: React.FC = () => (
-  <section className="bg-white py-16 sm:py-24">
+  <section className="bg-beige-50 py-16 sm:py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
@@ -25,7 +25,8 @@ const CourseOverview: React.FC = () => (
             </p>
             <p>
               At approximately 7,000 ft long from the red layout and 8,000 ft from the blue layout,
-              the course offers a challenge for players of all skill levels.
+              the course offers a genuine challenge for experienced players. A shorter Green layout (~4,500 ft)
+              is also available for less experienced players.
             </p>
           </div>
         </div>

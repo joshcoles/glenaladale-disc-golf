@@ -18,7 +18,7 @@ const Hero: React.FC = () => (
       </h1>
       <div className="mt-6 w-16 h-0.5 bg-yellow-primary mx-auto" />
       <p className="mt-6 font-sans font-light text-green-100 text-base sm:text-lg tracking-wide max-w-xl mx-auto leading-relaxed">
-        A wooded disc golf course 20 minutes north of Charlottetown, on the historic Glenaladale Estate.
+        A wooded disc golf course 20 minutes northeast of Charlottetown, on the historic Glenaladale Estate.
       </p>
     </div>
 

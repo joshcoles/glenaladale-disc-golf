@@ -7,7 +7,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-100">
+    <div className="border-b border-beige-200">
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
@@ -43,27 +43,27 @@ const FAQPage: React.FC = () => (
       subtitle="Can't find the answer you're looking for? Feel free to reach out."
     />
 
-    <div className="bg-white py-12 sm:py-20">
+    <section className="bg-beige-50 py-12 sm:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          {faq.map((item) => (
-            <FAQItem key={item.question} question={item.question} answer={item.answer} />
-          ))}
-        </div>
-
-        <div className="bg-green-50 p-8 text-center">
-          <p className="font-sans font-light text-brown-primary text-sm tracking-wide mb-4">
-            Still have a question?
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block font-sans text-sm tracking-widest uppercase text-green-primary border border-green-primary px-8 py-3 hover:bg-green-primary hover:text-white transition-colors"
-          >
-            Get in Touch
-          </Link>
-        </div>
+        {faq.map((item) => (
+          <FAQItem key={item.question} question={item.question} answer={item.answer} />
+        ))}
       </div>
-    </div>
+    </section>
+
+    <section className="bg-green-950 py-12">
+      <div className="max-w-xl mx-auto px-4 text-center">
+        <p className="font-sans font-light text-green-300 text-sm tracking-wide mb-5">
+          Still have a question?
+        </p>
+        <Link
+          to="/contact"
+          className="inline-block font-headline text-xs tracking-widest uppercase px-8 py-3 bg-yellow-primary text-green-950 hover:bg-yellow-400 transition-colors"
+        >
+          Get in Touch
+        </Link>
+      </div>
+    </section>
   </>
 );
 

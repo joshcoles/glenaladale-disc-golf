@@ -10,7 +10,7 @@ const ReviewsPage: React.FC = () => (
       subtitle="Reviews from UDisc, where disc golfers discover and rate courses around the world."
     />
 
-    <div className="bg-white py-12 sm:py-20">
+    <div className="bg-green-50 py-12 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="font-serif text-brown-primary text-base leading-relaxed max-w-2xl mb-10">
           We love receiving feedback about the course. While these are all positive reviews, we also
